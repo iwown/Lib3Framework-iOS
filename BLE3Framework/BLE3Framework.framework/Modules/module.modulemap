@@ -1,0 +1,6 @@
+framework module BLE3Framework {
+  umbrella header "BLE3Framework.h"
+
+  export *
+  module * { export * }
+}
