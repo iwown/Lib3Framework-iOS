@@ -43,6 +43,8 @@ typedef void(^NFCSuccessData)(id data);
 @class ZeronerPersonal;
 @class ZeronerHWOption;
 @class ZeronerSportTarget;
+@class ZeronerRoll;
+@class ZeronerCOption;
 @protocol BleDiscoverDelegate <NSObject>
 
 @required
@@ -211,6 +213,8 @@ typedef void(^NFCSuccessData)(id data);
 
 - (void)responseOfMotoControl:(NSUInteger)countsOn;
 
+- (void)responseOfCustomOption:(ZeronerCOption *)cOption;
+
 #pragma mark -/****************************===device data===*****************************************/
 
 /**
@@ -265,7 +269,11 @@ typedef void(^NFCSuccessData)(id data);
 - (void)updateHeartRateData_hours:(NSDictionary *)dict;
 
 #pragma mark -GNSS
-- (void)responseOfGNSSDataTest:(NSDictionary *)dict;
+- (void)responseOfHealth60DatasTest:(NSDictionary *)dict;
+- (void)responseOfHealth61DataTest:(NSDictionary *)dict;
+- (void)responseOfGNSS62DatasTest:(NSDictionary *)dict;
+- (void)responseOfGNSS63DataTest:(NSDictionary *)dict;
+
 /**
  *
  *
@@ -301,6 +309,9 @@ typedef void(^NFCSuccessData)(id data);
  max number of schedule could  be configured for one day.
  */
 - (void)responseOfScheduleInfoGetting:(NSDictionary *)dict;
+
+- (void)responseSplecialListsInfo:(NSDictionary *)dict;
+- (void)responseSplecialRoll:(ZeronerRoll *)zRoll;
 
 @end
 

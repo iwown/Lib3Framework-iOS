@@ -129,11 +129,15 @@ typedef enum {
      CMD_ID_MSG_MSG_SWITCH_SET = 5 ,
      CMD_ID_MSG_MSG_SWITCH_GET = 6 ,
      */
+    CMD_ID_MSG_SPECIAL_LIST_SET = 7 ,
+    CMD_ID_MSG_SPECIAL_LIST_GET = 8 ,
     
     CMD_ID_CTRL_KEYNOTIFY = 0,
     CMD_ID_CTRL_MOTOR = 1,
     CMD_ID_CTRL_SENSOR = 2,
     CMD_ID_CTRL_RECOGNITION = 3,
+    CMD_ID_CTRL_SET_CUSTOM_OPTION = 14,
+    CMD_ID_CTRL_GET_CUSTOM_OPTION = 15,
     
     CMD_ID_HEARTRATE_PARAM = 0,         //读取和设置心率参数
     CMD_ID_HEARTRATE_DATA = 1,          //分段心率数据同步

@@ -167,7 +167,7 @@
  */
 - (void)clearSportsData DEPRECATED_ATTRIBUTE;
 
-#pragma mark -/****************************===device setting===*****************************************/
+#pragma mark -SETTING ACTION-设置操作
 /**
  * 设置勿扰模式
  * setting DND(Do Not Disturb) mode. write this cmd with a <code>ZeronerDNDModel</code> object .
@@ -213,6 +213,8 @@
 - (void)readAlarmClock:(NSInteger)clockId;
 - (void)readFirmwareOption;
 
+- (void)setWeather:(ZeronerWeather *)weather;
+
 /**
  * arr [周一的arr，周二的arr，周三的arr，...]
  * 周一的arr [dict，dict，dict,...]， 周二的arr [dict，dict,...],...
@@ -225,7 +227,7 @@
  * the NSDictionary object have keys @"TARGET" and @"TYPE" , @"TARGET" is a NSNumber value of specific target like waking target 8000 steps ,this value should be @8000 , @"TYPE" key is also an NSNumber value , the value matched the enum sd_sportType in ZeronerBleHeader.h file
  * Note : both @"TARGET" and @"TYPE" value is decimalization.
 */
-- (void)setSportTarget:(NSMutableArray *)targetArray DEPRECATED_ATTRIBUTE;
+- (void)setSportTarget:(NSMutableArray *)targetArray;
 - (void)setSportTargetBy:(ZeronerSportTarget *)st;
 - (void)readV3Target;
 
@@ -268,11 +270,31 @@
  */
 - (void)clearAllContacts;
 
-#pragma mark -CONTROL ACTION-数据操作
+#pragma mark -MESSAGE ACTION-消息操作
+/*!
+ * 推送字串，比如： [zeronerBLE pushStr:@"这是个测试例子"];
+ */
+- (void)pushStr:(NSString *)str; //推送字串
+
+- (void)addSpecialList:(NSArray <ZeronerRoll *>*)sLists;
+- (void)removeSpecialList:(NSArray <ZeronerRoll *>*)sLists;
+- (void)clearAllLists;
+- (void)readSpecialList:(NSInteger)rId;
+- (void)readAllList;
+
+#pragma mark -CONTROL ACTION-控制操作
 - (void)feelMotor:(ZeronerMotor *)motor; //体验震动;
 - (void)setMotors:(NSArray<ZeronerMotor *> *)motors;  //设置震动
-- (void)setWeather:(ZeronerWeather *)weather;
 - (void)setRecognitionParams:(ZeronerAction *)action; //设置动作识别参数
+/*!
+ * setKeyNotify 进入智拍模式设置1. 退出智拍模式设置0   // 通知拍照从 - (void)notifyToTakePicture; 获得
+ * call this method to become smart photo or exits. set value 1 to active and set 0 to exit; get photoes @see - (void)notifyToTakePicture;
+ */
+- (void)setKeyNotify:(NSUInteger)keyNotify;
+
+- (void)setCustomOptions:(ZeronerCOption *)cOption;
+- (void)readCustomOptions;
+#pragma mark -HEARTRATE ACTION-心率模块
 
 /*!
  * 写心率参数
@@ -286,13 +308,6 @@
  */
 - (void)getHRParam;
 
-#pragma mark -action of feature layer -功能层操作
-
-/*!
- * 推送字串，比如： [zeronerBLE pushStr:@"这是个测试例子"];
- */
-- (void)pushStr:(NSString *)str; //推送字串
-
 /*!
  *  心率升级必备。//注： 暂不支持心率升级
  */
@@ -304,12 +319,6 @@
  *  Default is NO. set YES 放弃通用读写操作，在心率升级的时候使用。升级完成时候，需改回.
  */
 - (void)setWriteDataForbidden:(BOOL)forbidden DEPRECATED_ATTRIBUTE;
-
-/*!
- * setKeyNotify 进入智拍模式设置1. 退出智拍模式设置0   // 通知拍照从 - (void)notifyToTakePicture; 获得
- * call this method to become smart photo or exits. set value 1 to active and set 0 to exit; get photoes @see - (void)notifyToTakePicture;
- */
-- (void)setKeyNotify:(NSUInteger)keyNotify;
 
 #pragma mark 补录
 - (void)add28DataBySeq:(NSInteger )seq;
@@ -355,10 +364,20 @@
 - (BOOL)hasJapaneseLanguage;
 - (BOOL)hasItalianLanguage;
 
-#pragma mark - 0x60
+#pragma mark - 0x6x
 - (void)getHealthDataWith60;
-- (void)getHealthDataWith61;
-- (void)getHealthDataWith62;
+- (void)getHealthDataIndexTableWith61;
+- (void)startGetHealthDataWith61WithDate:(NSDate *)date StartSeq:(NSInteger)startSeq EndSeq:(NSInteger)endSeq;
+- (void)startGetHealthDataWith61WithData:(NSString *)sendData;
+- (void)endGetHealthDataWith61;
+- (void)getHealthDataIndexTableWith62;
+- (void)startGetHealthDataWith62WithDate:(NSDate *)date StartSeq:(NSInteger)startSeq EndSeq:(NSInteger)endSeq;
+- (void)startGetHealthDataWith62WithData:(NSString *)sendData;
+- (void)endGetHealthDataWith62;
 - (void)getHealthDataWith63;
+- (void)endGetHealthDataWith63;
+
+// 09
+- (void)write09WithBOOL:(BOOL)isOpen;
 
 @end

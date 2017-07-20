@@ -302,7 +302,8 @@ typedef NS_ENUM (NSInteger,ShakeType){
     ShakeTypeSedentary = 3,
     ShakeTypeCharging = 4,
     ShakeTypeSchedule = 5,
-    ShakeTypeCommon = 6
+    ShakeTypeCommon = 6,
+    ShakeTypeHRWarning = 7
 };
 
 typedef NS_ENUM (NSInteger,ShakeWay){
@@ -326,6 +327,14 @@ typedef NS_ENUM (NSInteger,ShakeWay){
 @property (nonatomic,assign)NSInteger   shakeCount;
 
 + (NSString *)nameForShakeWay:(ShakeWay)modelIndex;
+
+@end
+
+@interface ZeronerCOption : ZeronerModel
+/***
+ * 1-open ,2-close ,default 0 type not setting.
+ */
+@property (nonatomic, assign) NSInteger findPhoneSwitch;
 
 @end
 
@@ -415,8 +424,12 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 @interface ZeronerContacts : ZeronerModel
 
 @property (nonatomic ,assign) NSInteger cId; //contactId(hash_id) 电话本唯一索引，建议用年月日时分秒的整数
-@property (nonatomic ,assign) NSString *name; //18个字节，最长6个汉字，超出部分将被截断
-@property (nonatomic ,assign) NSString *number; //电话号码，仅支持数字,不超过20位
+@property (nonatomic ,copy) NSString *name; //18个字节，最长6个汉字，超出部分将被截断
+@property (nonatomic ,copy) NSString *number; //电话号码，仅支持数字,不超过20位
 @end
 
+@interface ZeronerRoll : ZeronerModel
+@property (nonatomic ,assign) NSInteger rId; //rollId(hash_id) 建议用年月日时分秒的整数,大小不要超过0xFFFFFFFF
+@property (nonatomic ,copy) NSString *rollName; //rollId(hash_id) 建议用年月日时分秒的整数
 
+@end
