@@ -225,14 +225,14 @@ typedef void(^NFCSuccessData)(id data);
 - (void)syscDataFinishedStateChange:(KSyscDataState)ksdState;
 
 /**
- *  Method would be invoked when received sport segement data（type 0x28）
+ *  Method would be invoked when received sport segement data.（data type is 0x28）
  *
  @param dict dict
  */
 - (void)updateSleepData:(NSDictionary *)dict;
 
 /**
- * Method would be invoked when received sport segement data（type 0x28）
+ * Method would be invoked when received sport segement data .（data type is 0x28）
 
  @param dict dict
  */
@@ -267,6 +267,13 @@ typedef void(^NFCSuccessData)(id data);
  * dict[@"detail_data"], 一个小时内@[每分钟平均心率值]
  */
 - (void)updateHeartRateData_hours:(NSDictionary *)dict;
+
+/**
+ * Method invoke by of 0x08.
+ * Contain data @{key:{jsonStr}}; type key lists : 0x29\0x28,0x51,0x53;
+ * jsonStr equal = @"{\"total\":%d,\"start\":%d,\"end\":%d}"; total =cicle num of seq, start=start of seq; end =end of seq
+ */
+- (void)updateNormalHealthData:(NSDictionary *)dict;
 
 #pragma mark -GNSS
 - (void)responseOfHealth60DatasTest:(NSDictionary *)dict;

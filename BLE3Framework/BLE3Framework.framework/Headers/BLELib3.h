@@ -65,6 +65,10 @@
 - (void)unConnectDevice;
 - (void)reConnectDevice;
 
+/**
+ * Use for custom connected.
+ */
+- (void)startWithAConncectedPeripheral:(CBPeripheral *)peripheral;
 #pragma mark -DEVICE ACTION- 设备操作
 /**
  *  reset device
@@ -321,10 +325,13 @@
 - (void)setWriteDataForbidden:(BOOL)forbidden DEPRECATED_ATTRIBUTE;
 
 #pragma mark 补录
+/**
+ *  Read special seq data with data type
+ *
+ *
+ */
 - (void)add28DataBySeq:(NSInteger )seq;
-
 - (void)add51DataBySeq:(NSInteger )seq;
-
 - (void)add53DataBySeq:(NSInteger )seq;
 
 - (NSInteger)dataSyncProgress;
@@ -351,8 +358,6 @@
 - (void)applicationProtectedDataDidBecomeAvailable;
 - (void)applicationProtectedDataWillBecomeUnavailable;
 - (void)applicationDidFinishLaunchingWithOptions;
-
-
 
 - (BraceletType)deviceType;
 - (NSString *)getDeivceAlias;
