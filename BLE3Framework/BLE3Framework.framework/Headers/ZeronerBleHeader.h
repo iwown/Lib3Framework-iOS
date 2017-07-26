@@ -278,6 +278,7 @@ typedef enum {
     BraceletTypeI6HR            = 0x13,
     BraceletTypeI6NH            = 0x15,
     BraceletTypeI6H9            = 0x16,
+    BraceletTypeWatchF1         = 0x17,
 } BraceletType;
 
 #define test
