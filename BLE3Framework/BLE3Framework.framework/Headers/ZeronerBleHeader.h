@@ -156,26 +156,26 @@ typedef enum {
  *  数据所属运动模式
  */
 typedef enum {
-    SD_SPORT_TYPE_SLEEP                 = 0x00 ,//睡眠
+    SD_SPORT_TYPE_SLEEP                          = 0x00 ,//睡眠
     
-    SD_SPORT_TYPE_WALKING               = 0x01 ,//走路
-    SD_SPORT_TYPE_SITE_UPS              = 0x02 ,//仰卧起坐
-    SD_SPORT_TYPE_PUSH_UP               = 0x03 ,//俯卧撑
-    SD_SPORT_TYPE_ROPE_SKIPPING         = 0x04 ,//跳绳
-    SD_SPORT_TYPE_MOUNTAINEERING        = 0x05 ,//登山
-    SD_SPORT_TYPE_PULL_UP               = 0x06 ,//引体向上
-    SD_SPORT_TYPE_RUNNING               = 0x07 ,//跑步
-    SD_SPORT_TYPE_APP_JIANMEICAO        = 0x08 ,//健美操
+    SD_SPORT_TYPE_WALKING                        = 0x01 ,//走路
+    SD_SPORT_TYPE_SITE_UPS                       = 0x02 ,//仰卧起坐
+    SD_SPORT_TYPE_PUSH_UP                        = 0x03 ,//俯卧撑
+    SD_SPORT_TYPE_ROPE_SKIPPING                  = 0x04 ,//跳绳
+    SD_SPORT_TYPE_MOUNTAINEERING                 = 0x05 ,//登山
+    SD_SPORT_TYPE_PULL_UP                        = 0x06 ,//引体向上
+    SD_SPORT_TYPE_RUNNING                        = 0x07 ,//跑步
+    SD_SPORT_TYPE_APP_JIANMEICAO                 = 0x08 ,//健美操
     
-    SD_SPORT_TYPE_CRUNCHES              = 0x09 ,//卷腹
-    SD_SPORT_TYPE_DEEP_SQUAT            = 0x0a ,//深蹲
-    SD_SPORT_TYPE_AIR_PEDAL             = 0x0b ,//空中蹬车
-    SD_SPORT_TYPE_HIP_BRIDGE            = 0x0c ,//臀桥
-    SD_SPORT_TYPE_DUMB_BELL             = 0x0d ,//哑铃锻炼
-    SD_SPORT_TYPE_APP_KAIHETIAO         = 0x0e ,//开合跳
-    SD_SPORT_TYPE_APP_JIANBUDUN         = 0x0f ,//箭步蹲
-    SD_SPORT_TYPE_SLIMMING_EXERCISE     = 0x10 ,//蹦床
-    SD_SPORT_TYPE_CLIMB_STAIRS          = 0x11 ,//爬楼梯
+    SD_SPORT_TYPE_CRUNCHES                       = 0x09 ,//卷腹
+    SD_SPORT_TYPE_DEEP_SQUAT                     = 0x0a ,//深蹲
+    SD_SPORT_TYPE_AIR_PEDAL                      = 0x0b ,//空中蹬车
+    SD_SPORT_TYPE_HIP_BRIDGE                     = 0x0c ,//臀桥
+    SD_SPORT_TYPE_DUMB_BELL                      = 0x0d ,//哑铃锻炼
+    SD_SPORT_TYPE_APP_KAIHETIAO                  = 0x0e ,//开合跳
+    SD_SPORT_TYPE_APP_JIANBUDUN                  = 0x0f ,//箭步蹲
+    SD_SPORT_TYPE_SLIMMING_EXERCISE              = 0x10 ,//蹦床
+    SD_SPORT_TYPE_CLIMB_STAIRS                   = 0x11 ,//爬楼梯
     
     SD_SPORT_TYPE_APP_BUYU                       = 0x12 ,//捕鱼
     SD_SPORT_TYPE_APP_SHOULIE                    = 0x13 ,//狩猎
@@ -236,31 +236,34 @@ typedef enum {
     SD_SPORT_TYPE_APP_XUESHANGQICHE              = 0xbf ,//雪上骑车
     SD_SPORT_TYPE_APP_TIAOSHUI                   = 0xc0 ,//跳水
     
-    SD_SPORT_TYPE_MASK                          = 0x80 ,//掩码
+    SD_SPORT_TYPE_MASK                           = 0x80 ,//掩码
     
-    SD_SPORT_TYPE_BADMINTON                     = 0x80 ,//羽毛球
-    SD_SPORT_TYPE_BASKETBALL                    = 0x81 ,//篮球
-    SD_SPORT_TYPE_FOOTBALL                      = 0x82 ,//足球
-    SD_SPORT_TYPE_SWIM                          = 0x83 ,//游泳
-    SD_SPORT_TYPE_VOLLEYBALL                    = 0x84 ,//排球
-    SD_SPORT_TYPE_TABLE_TENNIS                  = 0x85 ,//乒乓球
-    SD_SPORT_TYPE_BOWLING                       = 0x86 ,//保龄球
-    SD_SPORT_TYPE_TENNIS                        = 0x87 ,//网球
-    SD_SPORT_TYPE_CYCLING                       = 0x88 ,//骑行
-    SD_SPORT_TYPE_SKI                           = 0x89 ,//滑雪
-    SD_SPORT_TYPE_SKATE                         = 0x8a ,//滑冰
-    SD_SPORT_TYPE_ROCK_CLIMBING                 = 0x8b ,//攀岩
-    SD_SPORT_TYPE_GYM                           = 0x8c ,//健身房健身
-    SD_SPORT_TYPE_DANCE                         = 0x8d ,//舞蹈
-    SD_SPORT_TYPE_TABLET_SUPPORT                = 0x8e ,//平板撑
-    SD_SPORT_TYPE_GYM_EXERCISE                  = 0x8f ,//健身操
-    SD_SPORT_TYPE_YOGA                          = 0x90 ,//瑜伽
-    SD_SPORT_TYPE_SHUTTLECOCK                   = 0x91 ,//毽球
-    SD_SPORT_TYPE_ALLBALL                       = 0x92 ,//所有球类
+    SD_SPORT_TYPE_BADMINTON                      = 0x80 ,//羽毛球
+    SD_SPORT_TYPE_BASKETBALL                     = 0x81 ,//篮球
+    SD_SPORT_TYPE_FOOTBALL                       = 0x82 ,//足球
+    SD_SPORT_TYPE_SWIM                           = 0x83 ,//游泳
+    SD_SPORT_TYPE_VOLLEYBALL                     = 0x84 ,//排球
+    SD_SPORT_TYPE_TABLE_TENNIS                   = 0x85 ,//乒乓球
+    SD_SPORT_TYPE_BOWLING                        = 0x86 ,//保龄球
+    SD_SPORT_TYPE_TENNIS                         = 0x87 ,//网球
+    SD_SPORT_TYPE_CYCLING                        = 0x88 ,//骑行
+    SD_SPORT_TYPE_SKI                            = 0x89 ,//滑雪
+    SD_SPORT_TYPE_SKATE                          = 0x8a ,//滑冰
+    SD_SPORT_TYPE_ROCK_CLIMBING                  = 0x8b ,//攀岩
+    SD_SPORT_TYPE_GYM                            = 0x8c ,//健身房健身
+    SD_SPORT_TYPE_DANCE                          = 0x8d ,//舞蹈
+    SD_SPORT_TYPE_TABLET_SUPPORT                 = 0x8e ,//平板撑
+    SD_SPORT_TYPE_GYM_EXERCISE                   = 0x8f ,//健身操
+    SD_SPORT_TYPE_YOGA                           = 0x90 ,//瑜伽
+    SD_SPORT_TYPE_SHUTTLECOCK                    = 0x91 ,//毽球
+    SD_SPORT_TYPE_ALLBALL                        = 0x92 ,//所有球类
+    SD_SPORT_TYPE_POWALKING                      = 0x93 ,//健步走
+    SD_SPORT_TYPE_GOLF                           = 0x94 ,//高尔夫
+    SD_SPORT_TYPE_CANOEING                       = 0x95 ,//皮划艇
     
-    SD_SPORT_TYPE_HEART_RATE                    = 0xf0 ,//心率
+    SD_SPORT_TYPE_HEART_RATE                     = 0xf0 ,//心率
     
-    SD_SPORT_TYPE_WALKING_SAVE                  = 0x100 ,//走路
+    SD_SPORT_TYPE_WALKING_SAVE                   = 0x100 ,//走路
 } sd_sportType;
 
 /*** BraceletType

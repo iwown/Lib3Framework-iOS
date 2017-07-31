@@ -332,9 +332,16 @@ typedef NS_ENUM (NSInteger,ShakeWay){
 
 @interface ZeronerCOption : ZeronerModel
 /***
- * 1-open ,2-close ,default 0 type not setting.
+ * 0-close ,1-open ,
+ * default -1 type not setting.
  */
 @property (nonatomic, assign) NSInteger findPhoneSwitch;
+
+/**
+ * 0-1-2 ; low-normal-high
+ * default -1 type not setting
+ */
+@property (nonatomic, assign) NSInteger wristDelicacy;
 
 @end
 
