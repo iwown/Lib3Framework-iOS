@@ -23,6 +23,87 @@ typedef enum{
 }KSyscDataState;
 
 /**
+ * BLECmdResponse
+ * pare with braceletCmd_Command_t。
+ */
+typedef enum {
+    CMD_RESPONSE_DEVICE_GET_INFORMATION = 0x00,
+    CMD_RESPONSE_DEVICE_NFC_SET_AND_GET = CMD_RESPONSE_DEVICE_GET_INFORMATION,
+    CMD_RESPONSE_DEVICE_GET_BATTERY = 0x01,
+    CMD_RESPONSE_DEVICE_RESET = 0x02,
+    CMD_RESPONSE_DEVICE_UPDATE = 0x03,
+    CMD_RESPONSE_DEVICE_REQ_REBOND = 0x04,
+    CMD_RESPONSE_DEVICE_DO_REBOND = 0x05,
+    CMD_RESPONSE_DEVICE_DND_MODE = 0x06,
+    CMD_RESPONSE_DEVICE_WEATHER = 0x07,
+    CMD_RESPONSE_DEVICE_SYNCDATA = 0x08,
+    CMD_RESPONSE_DEVICE_HEARTBEAT_SIGNAL = 0x09,
+    CMD_RESPONSE_DEVICE_HW_OPTION_SUPPERT = 0x0a, // Hardware Option type Support
+    
+    CMD_RESPONSE_CONFIG_SET_TIME = 0x10,                 // Time
+    CMD_RESPONSE_CONFIG_GET_TIME = 0x11,
+    CMD_RESPONSE_CONFIG_SET_BLE = 0x12,                  // BLE
+    CMD_RESPONSE_CONFIG_GET_BLE = 0x13,
+    CMD_RESPONSE_CONFIG_SET_AC = 0x14,                   // AlarmClock
+    CMD_RESPONSE_CONFIG_GET_AC = 0x15,
+    CMD_RESPONSE_CONFIG_SET_NMA = 0x16,                  // No-Move-Alert
+    CMD_RESPONSE_CONFIG_GET_NMA = 0x17,
+    CMD_RESPONSE_CONFIG_SET_HW_OPTION = 0x18,            // Hardware Option
+    CMD_RESPONSE_CONFIG_GET_HW_OPTION = 0x19,
+    CMD_RESPONSE_CONFIG_GET_SPORT_LIST = 0x1a,          // Sport List
+    CMD_RESPONSE_CONFIG_SET_SPORT_TARGET = 0x1b,
+    CMD_RESPONSE_CONFIG_GET_SPORT_TARGET = 0x1c,
+    CMD_RESPONSE_CONFIG_SET_SCHEDULE = 0x1d,        //schedule
+    CMD_RESPONSE_CONFIG_GET_SCHEDULE = 0x1e,
+    CMD_RESPONSE_CONFIG_SGET_CONTACTS = 0x1f,       //contacts
+    
+    CMD_RESPONSE_DATALOG_SET_BODY_PARAM = 0x20,    // Body Parmameters
+    CMD_RESPONSE_DATALOG_GET_BODY_PARAM = 0x21,    // Read body Parmameters
+    CMD_RESPONSE_DATALOG_CLEAR_ALL = 0x22,
+    CMD_RESPONSE_DATALOG_START_GET_DAY_DATA = 0x23,
+    CMD_RESPONSE_DATALOG_SCALE_SYSC_INFO = CMD_RESPONSE_DATALOG_START_GET_DAY_DATA,
+    CMD_RESPONSE_DATALOG_STOP_GET_DAY_DATA = 0x24,
+    CMD_RESPONSE_DATALOG_SCALE_SYSC_DATA = CMD_RESPONSE_DATALOG_STOP_GET_DAY_DATA,
+    CMD_RESPONSE_DATALOG_START_GET_MINUTE_DATA = 0x25,
+    CMD_RESPONSE_DATALOG_SCALE_SYSC_DATA_RECENT = CMD_RESPONSE_DATALOG_START_GET_MINUTE_DATA,
+    CMD_RESPONSE_DATALOG_STOP_GET_MINUTE_DATA = 0x26,
+    CMD_RESPONSE_DATALOG_GET_CUR_DAY_DATA = 0x27,
+    CMD_RESPONSE_DATALOG_GET_SPORTDATA = 0x28,
+    CMD_RESPONSE_DATALOG_GET_CUR_SPORTDATA = 0x29,
+    CMD_RESPONSE_DATALOG_GET_SLEEP_TEST = 0x2a,
+    CMD_RESPONSE_DATALOG_GET_SMF_TEST = 0x2b,   //SMF -> sport minute freeze
+    
+    CMD_RESPONSE_MSG_UPLOAD = 0x30,
+    CMD_RESPONSE_MSG_SINGLE_DOWNLOAD = 0x31,
+    CMD_RESPONSE_MSG_MULTI_DOWNLOAD_START = 0x32,
+    CMD_RESPONSE_MSG_MULTI_DOWNLOAD_CONTINUE = 0x33,
+    CMD_RESPONSE_MSG_MULTI_DOWNLOAD_END = 0x34,
+    /***DEPRECATED_ATTRIBUTE
+     CMD_RESPONSE_MSG_MSG_SWITCH_SET = 0x35 ,
+     CMD_RESPONSE_MSG_MSG_SWITCH_GET = 0x36 ,
+     */
+    CMD_RESPONSE_MSG_SPECIAL_LIST_SET = 0x37 ,
+    CMD_RESPONSE_MSG_SPECIAL_LIST_GET = 0x38 ,
+    
+    CMD_RESPONSE_CTRL_KEYNOTIFY = 0x40,
+    CMD_RESPONSE_CTRL_MOTOR = 0x41,
+    CMD_RESPONSE_CTRL_SENSOR = 0x42,
+    CMD_RESPONSE_CTRL_RECOGNITION = 0x43,
+    CMD_RESPONSE_CTRL_SET_CUSTOM_OPTION = 0x4e,
+    CMD_RESPONSE_CTRL_GET_CUSTOM_OPTION = 0x4f,
+    
+    CMD_RESPONSE_HEARTRATE_PARAM = 0x50,         //读取和设置心率参数
+    CMD_RESPONSE_HEARTRATE_DATA = 0x51,          //分段心率数据同步
+    CMD_RESPONSE_HEARTRATE_UPDATE = 0x52,        //心率模块升级控制
+    CMD_RESPONSE_HEARTRATE_HOURS_DATA = 0x53,    //分时心率数据
+    
+    CMD_RESPONSE_HEALTH_DAY_DATA = 0x60,
+    CMD_RESPONSE_HEALTH_MINUTE_DATA = 0x61,
+    CMD_RESPONSE_GNSS_MINUTE_DATA = 0x62,
+    CMD_RESPONSE_GNSS_MINUTE_DATA_TEST = 0x63,
+}BLECmdResponse;
+
+/**
  * If your smartband supportted this option ,that is meant this device might show message sign replaced a bluetooth icon noticed connectted state .If you don't want to ,Please implement 
 \@method \bleParamSignSetting of \@protocol \BleConnectDelegate .use \@code \BLEParamSignConnect you will get bluetooth icon on screen of your smartband;
  * 如果你的手环支持这个协议，你将在手环上看到一个消息标示而不是一个表示连接状态的蓝牙图标。如果你不想要这样，请实现bleParamSignSetting方法，使用BLEParamSignConnect选项，你就可以在你手环屏幕上看到那个可爱的蓝牙图标了。
@@ -48,7 +129,6 @@ typedef void(^NFCSuccessData)(id data);
 @protocol BleDiscoverDelegate <NSObject>
 
 @required
-
 
 /**
  * This method is invoked while scanning
@@ -100,6 +180,11 @@ typedef void(^NFCSuccessData)(id data);
 - (void)IWBLEDidFailToConnectDevice:(ZeronerBlePeripheral *)device andError:(NSError *)error;
 
 /**
+ *  invoked when connect more than 10 second.
+ */
+- (void)IWBLEConnectTimeOut;
+
+/**
  *  表示手环注册ANCS失败，此时消息推送不能work，需要重新配对。
  *  This method would be invoked when the Peripheral disConnected with the system; In this case ,your app should tell the user who could ingore the device on system bluetooth ,and reconnect and pair the device. or there will be risk of receiving a message reminder.
  *
@@ -135,7 +220,16 @@ typedef void(^NFCSuccessData)(id data);
 
 #pragma mark -/****************************===device function===*****************************************/
 @optional
+/*
+ * Implement this method and return YES if you are not want sysc data automaticlly.
+ * Or SDK will call @method{syncData} after get periphral's info.
+ */
+- (BOOL)doNotSyscHealthAtTimes;
 
+/**
+ * Invoked when sppcial cmd sent to device.
+ */
+- (BOOL)writeCmdResponse:(BLECmdResponse)type;
 /**
  * 声明：蓝牙日志的解读需要zeroner蓝牙协议的文档，如果你没有阅读文档的权限，身边也没有可以阅读此文档的人，那么写日志对你来说不是必要的。
  * 传一个地址，如果你需要蓝牙的日志的话，最好是txt格式的。
@@ -166,7 +260,6 @@ typedef void(^NFCSuccessData)(id data);
 - (void)updateDeviceInfo:(ZeronerDeviceInfo *)deviceInfo;
 - (void)updateBattery:(ZeronerDeviceInfo *)deviceInfo;
 
-
 /**
  the method be called after call - (void)getSupportSportsList;
 
@@ -181,7 +274,6 @@ typedef void(^NFCSuccessData)(id data);
  */
 - (void)responseOfGetTime:(NSDate *)date;
 
-
 /**
  the response of get clock
 
@@ -189,14 +281,12 @@ typedef void(^NFCSuccessData)(id data);
  */
 - (void)responseOfGetClock:(ZeronerClock *)clock;
 
-
 /**
  the response of get sedentary
 
  @param sedentarys sedentarys
  */
 - (void)responseOfGetSedentary:(NSArray<ZeronerSedentary *>*)sedentarys;
-
 
 /**
  the response of get HWOption

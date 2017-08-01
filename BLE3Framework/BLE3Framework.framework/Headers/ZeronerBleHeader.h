@@ -19,7 +19,7 @@
 #pragma mark- BLE_DEVICE_INFO
 #define PEDOMETER_NEW_SERVICE_UUID          @"FF20"
 #define PEDOMETER_SPOTA_SERVICE_UUID        @"FEF5"  //Dialog升级服务
-#define PEDOMETER_WATCH_SERVICE_UUID        @"1803"
+#define PEDOMETER_WATCH_SERVICE_UUID        @"18A0"
 
 #define PEDOMETER_NEW_CHARACT_SET_UUID      @"FF21"
 #define PEDOMETER_OLD_CHARACT_TEST          @"FF22"
@@ -283,6 +283,7 @@ typedef enum {
     BraceletTypeI6H9            = 0x16,
     BraceletTypeWatchF1         = 0x17,
 } BraceletType;
+
 
 #define test
 #define TEST_PARSE_LOG_A(val) \

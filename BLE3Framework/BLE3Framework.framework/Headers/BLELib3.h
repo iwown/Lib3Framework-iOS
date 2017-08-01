@@ -101,7 +101,6 @@
  */
 - (void)getSupportSportsList;
 
-
 #pragma mark -DATALOG ACTION-数据操作
 
 /**
@@ -316,7 +315,6 @@
  *  心率升级必备。//注： 暂不支持心率升级
  */
 - (void)writeHeartRateUpdateCharacteristicData:(NSString *)str DEPRECATED_ATTRIBUTE;
-
 - (void)hrDataSwichStr:(NSString *)str DEPRECATED_ATTRIBUTE;
 
 /*!
@@ -327,7 +325,6 @@
 #pragma mark 补录
 /**
  *  Read special seq data with data type
- *
  *
  */
 - (void)add28DataBySeq:(NSInteger )seq;
