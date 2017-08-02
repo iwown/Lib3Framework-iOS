@@ -211,18 +211,19 @@ typedef void(^NFCSuccessData)(id data);
 
 #pragma mark -/****************************===device setting===*****************************************/
 
-@required
 /*
  *  Set bracelet parameter after connect with app.
  *  like ZeronerHWOption, ZeronerPersonal
+ *  use @CODE{doNotSyscHealthAtTimes} instead .
  */
-- (void)setBLEParameterAfterConnect;
+- (void)setBLEParameterAfterConnect DEPRECATED_ATTRIBUTE;
 
 #pragma mark -/****************************===device function===*****************************************/
 @optional
 /*
  * Implement this method and return YES if you are not want sysc data automaticlly.
- * Or SDK will call @method{syncData} after get periphral's info.
+ * Or SDK will call @method{syncData} after a little.
+ * NOTE: You should set bracelet parameter in this method instead @CODE{setBLEParameterAfterConnect} ,if you need lot of setting in there. You will be suggested return YES in finally.
  */
 - (BOOL)doNotSyscHealthAtTimes;
 
