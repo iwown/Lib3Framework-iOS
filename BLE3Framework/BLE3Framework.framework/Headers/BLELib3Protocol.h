@@ -214,23 +214,23 @@ typedef void(^NFCSuccessData)(id data);
 /*
  *  Set bracelet parameter after connect with app.
  *  like ZeronerHWOption, ZeronerPersonal
- *  use @CODE{doNotSyscHealthAtTimes} instead .
  */
-- (void)setBLEParameterAfterConnect DEPRECATED_ATTRIBUTE;
+- (void)setBLEParameterAfterConnect ;
 
 #pragma mark -/****************************===device function===*****************************************/
 @optional
 /*
  * Implement this method and return YES if you are not want sysc data automaticlly.
  * Or SDK will call @method{syncData} after a little.
- * NOTE: You should set bracelet parameter in this method instead @CODE{setBLEParameterAfterConnect} ,if you need lot of setting in there. You will be suggested return YES in finally.
+ * NOTE: You should set bracelet parameter in method @CODE{setBLEParameterAfterConnect} ,if you need lot of setting in there. You will be suggested return YES in finally.
  */
 - (BOOL)doNotSyscHealthAtTimes;
 
 /**
  * Invoked when sppcial cmd sent to device.
+ * error equal nil mean successful.
  */
-- (BOOL)writeCmdResponse:(BLECmdResponse)type;
+- (BOOL)writeCmdResponse:(BLECmdResponse)type andError:(NSError *)error;
 /**
  * 声明：蓝牙日志的解读需要zeroner蓝牙协议的文档，如果你没有阅读文档的权限，身边也没有可以阅读此文档的人，那么写日志对你来说不是必要的。
  * 传一个地址，如果你需要蓝牙的日志的话，最好是txt格式的。
