@@ -20,6 +20,7 @@
 #define PEDOMETER_NEW_SERVICE_UUID          @"FF20"
 #define PEDOMETER_SPOTA_SERVICE_UUID        @"FEF5"  //Dialog升级服务
 #define PEDOMETER_WATCH_SERVICE_UUID        @"18A0"
+#define PEDOMETER_MTK_SERVICE_UUID          @"181A"
 
 #define PEDOMETER_NEW_CHARACT_SET_UUID      @"FF21"
 #define PEDOMETER_OLD_CHARACT_TEST          @"FF22"
