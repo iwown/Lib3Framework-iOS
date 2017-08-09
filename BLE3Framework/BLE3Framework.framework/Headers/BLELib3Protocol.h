@@ -367,11 +367,14 @@ typedef void(^NFCSuccessData)(id data);
 - (void)updateNormalHealthData:(NSDictionary *)dict;
 
 #pragma mark -GNSS
-- (void)responseOfHealth60DatasTest:(NSDictionary *)dict;
-- (void)responseOfHealth61DataTest:(NSDictionary *)dict;
-- (void)responseOfGNSS62DatasTest:(NSDictionary *)dict;
-- (void)responseOfGNSS63DataTest:(NSDictionary *)dict;
-
+- (void)responseOfHealth60Data:(NSDictionary *)dict;
+- (void)responseOfHealth61IndexTable:(NSDictionary *)dict;
+- (void)responseOfHealth61Data:(NSDictionary *)dict;
+- (void)responseOfGNSS62IndexTable:(NSDictionary *)dict;
+- (void)responseOfGNSS62Data:(NSDictionary *)dict;
+- (void)responseOfGNSS63Data:(NSDictionary *)dict;
+- (void)responseOfECGIndexTable:(NSDictionary *)dict;
+- (void)responseOfECGData:(NSDictionary *)dict;
 /**
  *
  *

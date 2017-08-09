@@ -285,6 +285,10 @@
 - (void)readSpecialList:(NSInteger)rId;
 - (void)readAllList;
 
+/**
+ * See also: - (void)setDNDMode:(ZeronerDNDModel *)dndModel;
+ */
+- (void)switchMssageWarning:(BOOL)open;
 #pragma mark -CONTROL ACTION-控制操作
 - (void)feelMotor:(ZeronerMotor *)motor; //体验震动;
 - (void)setMotors:(NSArray<ZeronerMotor *> *)motors;  //设置震动
@@ -378,6 +382,13 @@
 - (void)endGetHealthDataWith62;
 - (void)getHealthDataWith63;
 - (void)endGetHealthDataWith63;
+- (void)getECGDataIndexTable;
+- (void)startGetECGDataWithDate:(NSDate *)date StartSeq:(NSInteger)startSeq EndSeq:(NSInteger)endSeq;
+- (void)startGetECGDataWithData:(NSString *)sendData;
+- (void)endGetECGData;
+
+
+#pragma mark -
 
 // 09
 - (void)write09WithBOOL:(BOOL)isOpen;
