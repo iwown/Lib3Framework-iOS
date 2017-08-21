@@ -273,6 +273,17 @@
  */
 - (void)clearAllContacts;
 
+#pragma mark GNSS配置
+/**
+ * 设置位置信息
+ */
+- (void)setGNSSParameterWithTimeZone:(NSInteger)timeZone Latitude:(float)latitude Longitude:(float)longitude Altitude:(NSInteger)altitude;
+/**
+ * 清除位置信息
+ */
+- (void)readGNSSParameter;
+
+
 #pragma mark -MESSAGE ACTION-消息操作
 /*!
  * 推送字串，比如： [zeronerBLE pushStr:@"这是个测试例子"];
@@ -303,17 +314,25 @@
 - (void)readCustomOptions;
 #pragma mark -HEARTRATE ACTION-心率模块
 
+/**
+ 设置运动心率报警参数
+ */
+- (void)setEHRWParam:(ZeronerEHRWP *)ehrwp;
+/**
+ 读取运动心率报警参数
+ */
+- (void)readEHRWParam;
 /*!
  * 写心率参数
  * hrIntensity 运动强度;
  * time 报警时间 units is minute , default is 10 minutes. if you write an number 0, the default num will be valid.
  */
-- (void)setHRParamData:(NSUInteger)hrIntensity andAlarmTime:(NSUInteger)time;
+- (void)setHRParamData:(NSUInteger)hrIntensity andAlarmTime:(NSUInteger)time DEPRECATED_ATTRIBUTE;
 /*!
  * 读取心率模块参数
  * Read setting params of heartRate;
  */
-- (void)getHRParam;
+- (void)getHRParam DEPRECATED_ATTRIBUTE;
 
 /*!
  *  心率升级必备。//注： 暂不支持心率升级
@@ -366,6 +385,13 @@
 - (BOOL)hasHeartFunction;
 - (BOOL)hasScheduleFunction;
 - (BOOL)hasWeatherFunction;
+- (BOOL)hasMotorControlFunction;
+- (BOOL)hasBackgroundLightFunction;
+- (BOOL)hasLanguageSelectFunction;
+- (BOOL)hasLedLightFunction;
+- (BOOL)hasAutoHeartRateFunction;
+- (BOOL)hasWristBlightFunction;
+- (BOOL)hasExerciseHRWarningFunction;
 - (BOOL)hasSimpleLanguage;
 - (BOOL)hasJapaneseLanguage;
 - (BOOL)hasItalianLanguage;

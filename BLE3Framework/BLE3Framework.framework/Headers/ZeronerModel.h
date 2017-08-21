@@ -15,6 +15,7 @@ typedef enum {
     Model_MESPush = 4,        //消息推送
     //    Model_Schedule = 5,  //日程
     Model_MotoControl = 6,  //震动
+    Model_EXHRWParam = 7,    //运动心率参数
 }ModelType;
 
 @interface ZeronerModel : NSObject <NSCoding>
@@ -440,3 +441,30 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 @property (nonatomic ,copy) NSString *rollName; //rollId(hash_id) 建议用年月日时分秒的整数
 
 @end
+
+@interface ZeronerGPSPoint : ZeronerModel
+@property (nonatomic ,assign) NSInteger timeZone; //时区
+@property (nonatomic ,assign) float latitude; //纬度
+@property (nonatomic ,assign) float longitude; //经度
+@property (nonatomic ,assign) NSInteger altitude; //海拔
+
+@end
+
+@interface ZeronerEHRWP : ZeronerModel <NSCoding,NSCopying>
+/*
+ 报警开关 默认为YES*/
+@property (nonatomic ,assign) BOOL enable;
+/*
+ 报警上限心率，高于该值触发报警，范围50～200，默认160*/
+@property (nonatomic ,assign) NSInteger threshold_high;
+/*
+ 报警下限心率，低于该值触发报警，范围40～190，默认50*/
+@property (nonatomic ,assign) NSInteger threshold_low;
+/*
+ 报警检测时间，单位秒，默认30*/
+@property (nonatomic ,assign) NSInteger timerOut;
+/*
+ 报警触发间隔，单位分钟，默认2*/
+@property (nonatomic ,assign) NSInteger interval;
+@end
+

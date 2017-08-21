@@ -126,6 +126,9 @@ typedef void(^NFCSuccessData)(id data);
 @class ZeronerSportTarget;
 @class ZeronerRoll;
 @class ZeronerCOption;
+@class ZeronerGPSPoint;
+
+
 @protocol BleDiscoverDelegate <NSObject>
 
 @required
@@ -305,6 +308,8 @@ typedef void(^NFCSuccessData)(id data);
 - (void)responseOfMotoControl:(NSUInteger)countsOn;
 
 - (void)responseOfCustomOption:(ZeronerCOption *)cOption;
+
+- (void)responseOfGPSPoint:(ZeronerGPSPoint *)pModel;
 
 #pragma mark -/****************************===device data===*****************************************/
 

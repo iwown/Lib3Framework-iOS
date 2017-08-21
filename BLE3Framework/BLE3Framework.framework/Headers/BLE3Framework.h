@@ -20,5 +20,4 @@ FOUNDATION_EXPORT const unsigned char BLE3FrameworkVersionString[];
 #import <BLE3Framework/ZeronerBleHeader.h>
 #import <BLE3Framework/ZeronerModel.h>
 #import <BLE3Framework/ZeronerBlePeripheral.h>
-#import <BLE3Framework/BLEScale.h>
 #import <BLE3Framework/ZeronerHealthData.h>
