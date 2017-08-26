@@ -7,5 +7,5 @@ git commit -am '${VERSION}'
 git push
 git tag ${VERSION}
 git push --tags
-pod lib lint
-pod trunk push BLE3Framework.podspec
+#pod lib lint
+#pod trunk push BLE3Framework.podspec
