@@ -18,13 +18,26 @@ typedef enum {
     Model_EXHRWParam = 7,    //运动心率参数
 }ModelType;
 
+/*eg. @{kDEFAULTS_BACKGROUD_COLOR:@YES}*/
+static NSString *const kDEFAULTS_BACKGROUD_COLOR = @"kDEFAULTS_BACKGROUD_COLOR";
+/*eg. @{kDEFAULTS_BACKGROUD_COLOR:[ZeronerEHRWP new]}*/
+static NSString *const kDEFAULTS_EXHRW_RANGE = @"kDEFAULTS_EXHRW_RANGE";
+
 @interface ZeronerModel : NSObject <NSCoding>
 
++ (void)setCurrentKeyModel:(NSString *)keyModel;
 + (id)getModel:(ModelType)type;
 + (void)saveModel:(id)model;
 + (void)initBLEModel;
-@end
 
+/**
+ 自定义初始化 Custom initial
+ call setCurrentKeyModel method before use this method
+ @param defaults @see kDEFAULTS_BACKGROUD_COLOR
+ */
++ (void)initBLEModelWithDefaults:(NSDictionary *)defaults;
+
+@end
 
 @interface ZeronerClock : ZeronerModel <NSCoding>
 + (instancetype)defaultClock;

@@ -67,6 +67,7 @@
 
 /**
  * Use for custom connected.
+ * If you want use a connected device ,please use @CODE{unConnectDevice} before startWithAConncectedPeripheral;
  */
 - (void)startWithAConncectedPeripheral:(CBPeripheral *)peripheral;
 #pragma mark -DEVICE ACTION- 设备操作

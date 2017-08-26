@@ -20,6 +20,9 @@ typedef enum{
     KSyscDataStateSleepEnd , //28结束
     KSyscDataStateHeartRateEnd , //51结束
     KSyscDataStateInFinished , //全部结束
+    KSyscDataState61End,     //61结束
+    KSyscDataState62End,     //62结束
+    KSyscDataState64End,     //64结束
 }KSyscDataState;
 
 /**
