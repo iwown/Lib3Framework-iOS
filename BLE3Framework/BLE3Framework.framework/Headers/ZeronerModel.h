@@ -230,6 +230,27 @@ typedef enum{
  */
 @property (nonatomic, assign) BOOL findPhoneSwitch;
 
+/**
+ *
+ * 自定义表盘   默认0
+ */
+@property (nonatomic, assign) NSInteger homePage_type;
+
+/**
+ * Level
+ * F1的背光设置参数  0~5 默认5
+ */
+@property (nonatomic, assign) NSInteger backLightLevel;
+
+/**
+ * Switch used for GPS
+ * gps 开关
+ */
+@property (nonatomic, assign) BOOL gpsFlag;
+
+
+
+
 @end
 
 

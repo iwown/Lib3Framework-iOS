@@ -25,6 +25,9 @@
 
 @property (nonatomic ,weak) id <BleDiscoverDelegate>discoverDelegate;
 
+/*Read Version Code of SDK*/
+- (NSString *)libBleSDKVersion;
+
 /**
  * @property state
  * Supportted add observer ,abandon @readonly ,don't change it anyway.
