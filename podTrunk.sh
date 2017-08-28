@@ -9,7 +9,7 @@ fi
 VERSION=$1
 
 sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" BLE3Framework.podspec
-git commit -am '${VERSION}' 
+git commit -am "${VERSION}" 
 git push
 git tag ${VERSION}
 git push --tags
