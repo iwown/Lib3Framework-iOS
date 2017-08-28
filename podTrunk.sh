@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --login
 
 #Verify variable is provided
 if [ "$1" = "" ]; then
