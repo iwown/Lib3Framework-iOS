@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#Verify variable is provided
+if [ "$1" = "" ]; then
+        echo -e "Version number not provide"
+        exit 1
+fi
+
 VERSION=$1
 
 sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" BLE3Framework.podspec
