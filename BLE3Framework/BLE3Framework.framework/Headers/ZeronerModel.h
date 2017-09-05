@@ -25,17 +25,22 @@ static NSString *const kDEFAULTS_EXHRW_RANGE = @"kDEFAULTS_EXHRW_RANGE";
 
 @interface ZeronerModel : NSObject <NSCoding>
 
+/**
+ * keyModel represent a special device. your are recommand to set a key like @"Bracelet-9999"
+ */
 + (void)setCurrentKeyModel:(NSString *)keyModel;
 + (id)getModel:(ModelType)type;
 + (void)saveModel:(id)model;
-+ (void)initBLEModel;
 
 /**
- 自定义初始化 Custom initial
- call setCurrentKeyModel method before use this method
- @param defaults @see kDEFAULTS_BACKGROUD_COLOR
+ Call setCurrentKeyModel: method before initBLEModel, your must special the
+ @return YES mean initial successfully.
  */
-+ (void)initBLEModelWithDefaults:(NSDictionary *)defaults;
++ (BOOL)initBLEModel;
+/** 自定义初始化 Custom initial
+ *  @param defaults @see kDEFAULTS_BACKGROUD_COLOR
+ */
++ (BOOL)initBLEModelWithDefaults:(NSDictionary *)defaults;
 
 @end
 
