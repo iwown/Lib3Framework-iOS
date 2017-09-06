@@ -172,6 +172,12 @@ typedef enum{
 @property (nonatomic ,assign) BOOL wristSwitch;
 
 /**
+ * switch of heartRateAlarm ,default is YES.
+ * 心率告警开关,默认为YES。
+ */
+@property (nonatomic ,assign) BOOL heartRateAlarmSwitch;
+
+/**
  * switch of unitType changed ,default is UnitTypeInternational.
  * 公英制单位切换开关 ，默认是国际单位制。
  */
