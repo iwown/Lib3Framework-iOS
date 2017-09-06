@@ -22,6 +22,8 @@ typedef enum {
 static NSString *const kDEFAULTS_BACKGROUD_COLOR = @"kDEFAULTS_BACKGROUD_COLOR";
 /*eg. @{kDEFAULTS_BACKGROUD_COLOR:[ZeronerEHRWP new]}*/
 static NSString *const kDEFAULTS_EXHRW_RANGE = @"kDEFAULTS_EXHRW_RANGE";
+/*eg. @{kDEFAULTS_EXHR_MOTOR:[ZeronerMotor new]}*/
+static NSString* const kDEFAULTS_EXHR_MOTOR=@"kDEFAULTS_EXHR_MOTOR";
 
 @interface ZeronerModel : NSObject <NSCoding>
 
@@ -171,11 +173,6 @@ typedef enum{
  */
 @property (nonatomic ,assign) BOOL wristSwitch;
 
-/**
- * switch of heartRateAlarm ,default is YES.
- * 心率告警开关,默认为YES。
- */
-@property (nonatomic ,assign) BOOL heartRateAlarmSwitch;
 
 /**
  * switch of unitType changed ,default is UnitTypeInternational.
