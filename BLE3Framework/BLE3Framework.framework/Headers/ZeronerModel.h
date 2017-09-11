@@ -32,6 +32,7 @@ static NSString* const kDEFAULTS_EXHR_MOTOR=@"kDEFAULTS_EXHR_MOTOR";
  */
 + (void)setCurrentKeyModel:(NSString *)keyModel;
 + (id)getModel:(ModelType)type;
++(void)clearCurrentKeyModel;
 + (void)saveModel:(id)model;
 
 /**
@@ -366,7 +367,7 @@ typedef NS_ENUM (NSInteger,ShakeWay){
 @interface ZeronerMotor : ZeronerModel<NSCoding>
 + (NSArray <ZeronerMotor *> *)defaultMotors ;
 @property (nonatomic,assign)ShakeType   type;
-@property (nonatomic,assign)ShakeWay    modeIndex;
+@property (nonatomic,assign)ShakeWay   modeIndex;
 @property (nonatomic,assign)NSInteger   shakeCount;
 
 + (NSString *)nameForShakeWay:(ShakeWay)modelIndex;

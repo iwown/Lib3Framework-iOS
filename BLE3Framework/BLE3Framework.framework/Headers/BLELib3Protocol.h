@@ -383,6 +383,11 @@ typedef void(^NFCSuccessData)(id data);
 - (void)responseOfGNSS63Data:(NSDictionary *)dict;
 - (void)responseOfECGIndexTable:(NSDictionary *)dict;
 - (void)responseOfECGData:(NSDictionary *)dict;
+
+#pragma mark -FOTA
+- (void)responseOfMTKBtNotifyData:(CBCharacteristic *)cbc;
+- (void)responseOfMTKBtWriteData:(CBCharacteristic *)cbc;
+/****************/
 /**
  *
  *

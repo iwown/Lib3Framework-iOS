@@ -29,6 +29,9 @@
 #define SCALE_S2_SERVICE_UUID               @"FF30"
 #define SCALE_S2_WRITE_CHARACTERY_UUID      @"FF31"
 #define SCALE_S2_READ_CHARACTERY_UUID       @"FF33"
+#define PEDOMETER_MTK_CHARACT_FOTA_READ     @"2AA0"
+#define PEDOMETER_MTK_CHARACT_FOTA_WRITE    @"2AA1"
+
 
 #define PEDOMETER_OLD_CHARACT_VALUE_PERFIX  @"22ff"
 #define PEDOMETER_NEW_CHARACT_VALUE_PERFIX  @"23ff"
@@ -249,7 +252,7 @@ typedef enum {
     SD_SPORT_TYPE_SKATE                          = 0x8a ,//滑冰
     SD_SPORT_TYPE_ROCK_CLIMBING                  = 0x8b ,//攀岩
     SD_SPORT_TYPE_GYM                            = 0x8c ,//健身房健身
-    SD_SPORT_TYPE_DANCE                          = 0x8d ,//舞蹈
+    SD_SPORT_TYPE_DANCE                          = 0x8d ,//跳舞
     SD_SPORT_TYPE_TABLET_SUPPORT                 = 0x8e ,//平板撑
     SD_SPORT_TYPE_GYM_EXERCISE                   = 0x8f ,//健身操
     SD_SPORT_TYPE_YOGA                           = 0x90 ,//瑜伽
