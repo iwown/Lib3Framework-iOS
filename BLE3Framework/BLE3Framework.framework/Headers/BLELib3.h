@@ -57,6 +57,10 @@
  * ShareInstance returns a global BLELib3's object configured to interact with low energy peripheral devices
  */
 + (instancetype)shareInstance;
+/*
+ * Call this method if you had change the peripheral's delegate for any other object.
+ */
+- (void)registerDeviceDelegate;
 #pragma mark -CONNECT ACTION- 连接相关操作
 
 /**
