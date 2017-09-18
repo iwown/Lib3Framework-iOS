@@ -23,6 +23,7 @@ typedef enum{
     KSyscDataState61End,     //61结束
     KSyscDataState62End,     //62结束
     KSyscDataState64End,     //64结束
+    KSyscDataStateStartSyscF1Data,     //64结束
 }KSyscDataState;
 
 /**
