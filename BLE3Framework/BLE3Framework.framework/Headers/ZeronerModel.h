@@ -433,7 +433,12 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 
 @end
 
-
+typedef enum {
+    DFUPlatformTi = 1,
+    DFUPlatformNortic = 2,
+    DFUPlatformDialog = 3,
+    DFUPlatformMtk = 4,
+} DFUPlatform;
 @interface ZeronerDeviceInfo : ZeronerModel
 
 @property (nonatomic,strong)    NSString *protocolVer;   // 协议版本
@@ -457,7 +462,7 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 - (void)updateHeartRateParam:(NSString *)body;
 
 - (BOOL)isDialogDFU;
-
+- (DFUPlatform)platformForDfu;
 @end
 
 @interface ZeronerAction : ZeronerModel
