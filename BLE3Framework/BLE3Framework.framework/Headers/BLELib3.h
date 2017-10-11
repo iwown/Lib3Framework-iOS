@@ -40,6 +40,12 @@
  */
 @property (nonatomic ,assign) BOOL isResetFWSettingNeed;
 
+
+/**
+ * Control whether the SDK automatically reconnect internally, if YES, BLELib3 will reconnect binded device after 2 seconds from initinal. Default is YES.
+ * If you need to implement the connection logic yourself, set it to NO.
+ */
+@property (class ,nonatomic ,assign) BOOL bleReConnectNeed;
 /***
  * 用于查询蓝牙是否可用
  * Used for iOS_10 above
