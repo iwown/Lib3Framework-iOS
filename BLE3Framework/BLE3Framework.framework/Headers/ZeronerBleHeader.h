@@ -150,6 +150,7 @@ typedef enum {
     CMD_ID_GNSS_MINUTE_DATA = 2,
     CMD_ID_GNSS_MINUTE_DATA_TEST = 3,
     CMD_ID_ECG_MINUTE_DATA = 4,
+    CMD_ID_EPO_DOWNLOAD_START = 5,
 } braceletCmd_Command_t;
 
 /***

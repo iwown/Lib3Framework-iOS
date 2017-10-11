@@ -388,6 +388,14 @@ typedef void(^NFCSuccessData)(id data);
 #pragma mark -FOTA
 - (void)responseOfMTKBtNotifyData:(CBCharacteristic *)cbc;
 - (void)responseOfMTKBtWriteData:(CBCharacteristic *)cbc;
+
+typedef enum {
+    EPO_SEND_STATE_START = 1,
+    EPO_SEND_STATE_END = 2,
+    EPO_SEND_STATE_CHECK_FINISH = 3,
+    EPO_SEND_STATE_GET_ERROR = 4,
+}EPO_SEND_STATE;
+- (void)epoDownloadProgress:(int)state;
 /****************/
 /**
  *

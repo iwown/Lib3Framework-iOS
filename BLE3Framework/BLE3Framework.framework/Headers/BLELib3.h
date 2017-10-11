@@ -269,6 +269,7 @@
  */
 - (void)readSchedule:(ZeronerSchedule *)sModel;
 
+#pragma mark - ADD CONTACTS 
 /*****
  * 添加电话本联系人
  * Add contacts
@@ -383,6 +384,8 @@
 - (void)exchangeWithData:(NSString *)data
             responseData:(NFCSuccessData)successData
                  failure:(void(^)(id error))failure;
+
+- (void)requestEpoUpdate;
 
 #define mark -AppBackMode
 
