@@ -58,6 +58,8 @@
  */
 @property (nonatomic ,assign) CBCentralManagerState centralBluetoothState;
 
+
+@property (nonatomic ,strong) ZeronerDeviceInfo *deviceInfo;
 /*
  * 全局单例类
  * ShareInstance returns a global BLELib3's object configured to interact with low energy peripheral devices
