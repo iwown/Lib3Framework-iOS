@@ -126,7 +126,8 @@
 - (void)syncData;
 - (void)stopSyncData;
 - (BOOL)syncIsFinished;
-
+/*0x08协议，获取数据信息，回调方法：- (void)updateNormalHealthData:(NSDictionary *)dict;*/
+- (void)getSyscDataInfo;
 /**
  * 获取0x28数据
  */
@@ -234,6 +235,7 @@
 
 - (void)setWeather:(ZeronerWeather *)weather;
 
+- (void)readPeriphralRssi;
 /**
  * arr [周一的arr，周二的arr，周三的arr，...]
  * 周一的arr [dict，dict，dict,...]， 周二的arr [dict，dict,...],...
