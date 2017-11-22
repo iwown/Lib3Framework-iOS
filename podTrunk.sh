@@ -8,7 +8,7 @@ fi
 
 VERSION=$1
 
-cd /Users/ASCE/GitHub/Lib3Framework-iOS/ 
+cd /Users/scow/GitHub/Lib3Framework-iOS/ 
 sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" BLE3Framework.podspec
 git commit -am "${VERSION}" 
 git push

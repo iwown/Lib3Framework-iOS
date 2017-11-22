@@ -234,30 +234,11 @@ typedef enum{
 
 
 /**
- * Switch used for control search phone feature 
- * 找手机功能的开关
+ * Switch used for control search phone feature
+ * 找手机功能的开关 ,自动运动识别 （同一个字段，不同协议固件支持内容不同，findPhoneSwitch仅少量固件支持）
  */
+@property (nonatomic ,assign) BOOL autoSport;
 @property (nonatomic, assign) BOOL findPhoneSwitch;
-
-/**
- *
- * 自定义表盘   默认0
- */
-@property (nonatomic, assign) NSInteger homePage_type;
-
-/**
- * Level
- * F1的背光设置参数  0~5 默认5
- */
-@property (nonatomic, assign) NSInteger backLightLevel;
-
-/**
- * Switch used for GPS
- * gps 开关
- */
-@property (nonatomic, assign) BOOL gpsFlag;
-
-
 
 
 @end
