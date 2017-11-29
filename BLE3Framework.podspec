@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 s.name         = 'BLE3Framework'
 
-s.version      = "4.7.9"
+s.version      = "4.8.0"
 
 s.summary      = 'Used for iwown BLE smart band'
 
