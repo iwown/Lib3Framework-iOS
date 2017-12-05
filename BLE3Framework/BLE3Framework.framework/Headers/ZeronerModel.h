@@ -371,6 +371,11 @@ typedef NS_ENUM (NSInteger,ShakeWay){
  */
 @property (nonatomic, assign) NSInteger wristDelicacy;
 
+/*
+ * 0-1 ; NO-YES
+ * default -1 type not setting
+ */
+@property (nonatomic, assign) NSInteger readSleepData;
 @end
 
 typedef NS_ENUM (NSInteger,DNDType){
