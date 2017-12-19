@@ -331,6 +331,7 @@
 
 - (void)setCustomOptions:(ZeronerCOption *)cOption;
 - (void)readCustomOptions;
+- (void)getSleepData_Custom;
 #pragma mark -HEARTRATE ACTION-心率模块
 
 /**
