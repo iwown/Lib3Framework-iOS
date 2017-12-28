@@ -168,7 +168,7 @@ typedef enum{
  */
 @property (nonatomic ,assign) BOOL ledSwitch;
 
-//惯用手 默认左手
+//惯用手 默认@YES，右手
 @property (nonatomic,assign)BOOL  leftHand;
 
 /**
