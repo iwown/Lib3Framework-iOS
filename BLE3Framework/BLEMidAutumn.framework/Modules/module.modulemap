@@ -1,0 +1,6 @@
+framework module BLEMidAutumn {
+  umbrella header "BLEMidAutumn.h"
+
+  export *
+  module * { export * }
+}
