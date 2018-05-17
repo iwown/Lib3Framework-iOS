@@ -30,6 +30,7 @@
 @class ZRTargetOnceDay;
 @class ZRMesgPush;
 
+typedef void(^ReadDeviceSettingComplementation)(id obj);
 
 /**
  Communication agent, holding peripheral connection object, make a protocol conversion between the app and the device, so that the API is easier to understand than the binary.
@@ -150,6 +151,7 @@
 - (void)setDeviceOption:(ZRHWOption *)deOption;
 /**! Read device option. Got the response in method readResponseFromDevice:*/
 - (void)readDeviceOption;
+- (void)readDeviceOptionWithBlock:(ReadDeviceSettingComplementation)rdsComplemention;
 
 /**! Get sport type list that device support. Got the response in method readResponseFromDevice:*/
 - (void)readSupportSports;
@@ -317,6 +319,14 @@
 
 
 -(void)testECGModel;
+
+
+//微教练
+- (void)startExercise;
+- (void)endExercise;
+- (void)pauseExercise;
+
+
 @end
 
 

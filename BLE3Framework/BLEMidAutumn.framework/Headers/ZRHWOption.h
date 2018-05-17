@@ -20,7 +20,7 @@ typedef enum{
 
 typedef enum{
     braceletLanguageDefault = 0, //default is english equal @code braceletLanguageEnglish
-    braceletLanguageEnglish ,// some smartband did not support it ,use braceletLanguageDefault if you don't want set in simple chinese.
+    braceletLanguageEnglish = braceletLanguageDefault,// some smartband did not support it ,use braceletLanguageDefault if you don't want set in simple chinese.
     braceletLanguageSimpleChinese = 1,
     braceletLanguageItalian = 2,
     braceletLanguageJapanese = 3,
@@ -125,5 +125,7 @@ typedef enum{
  * 自动运动识别
  */
 @property (nonatomic ,assign) BOOL autoSport;
+
+- (void)copyOptionForWatch:(ZRHWOption *)hwOption;
 
 @end

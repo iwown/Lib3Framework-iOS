@@ -94,17 +94,17 @@ typedef struct {
 @property (nonatomic ,assign) int steps;
 
 /**
- The training time for the day, nil means that the device does not support, different from 0
+ The training time for the day, Nil indicates that the current device does not have a training duration data for statistics. Please use updateNormalHealthData: to obtain the required data. different from 0
  */
 @property (nonatomic ,strong) NSNumber *exerciseMinutes;
 
 /**
- Like exerciseMinutes, which means sleep time, nil means the device does not support it
+ Like exerciseMinutes, which means sleep time, Nil indicates that the current device does not have a statistical value for the duration of sleep data, use updateNormalHealthData: to obtain the required data
  */
 @property (nonatomic ,strong) NSNumber *sleepMinutes;
 
 /**
- The value of the last detection of heart rate, nil that does not support
+ The value of the last detection of heart rate, Nil indicates that the current device does not have a recent average heart rate data, use updateNormalHealthData: to obtain the required data
  */
 @property (nonatomic ,strong) NSNumber *heartRate;
 

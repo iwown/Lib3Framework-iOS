@@ -157,6 +157,9 @@
  */
 - (void)updateNormalHealthData:(ZRHealthData *)zrhData;
 
+/**! Simple progress in Percent<##>*/
+- (void)updateDataProgress:(NSInteger)progress;
+
 /**! Successfully disconnected, you can call the unbinding method here.<##>*/
 - (void)debindFromBraceletSuccessful;
 
