@@ -160,6 +160,13 @@
 /**! Simple progress in Percent<##>*/
 - (void)updateDataProgress:(NSInteger)progress;
 
+
+/**
+ * Heart Rate Protocol  心率标准协议
+ * @param hr  Real-time heart rate 实时心率
+ */
+- (void)responseHeartRateData:(NSInteger)hr;
+
 /**! Successfully disconnected, you can call the unbinding method here.<##>*/
 - (void)debindFromBraceletSuccessful;
 
@@ -193,6 +200,10 @@
 - (void)responseOfMTKBtWriteData:(CBCharacteristic *)cbc;
 /**! Secretly Upgreade epo events*/
 - (void)itIsBestTimeForEpoSecretly;
+
+
+#pragma mark -
+- (void)responseOfExercise:(NSString *)string;
 
 @end
 

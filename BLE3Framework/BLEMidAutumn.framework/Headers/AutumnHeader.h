@@ -18,7 +18,9 @@
 #define PEDOMETER_WATCH_SERVICE_UUID        @"18A0"
 #define PEDOMETER_MTK_SERVICE_UUID          @"181A"
 #define Z4_SERVICE_ID                       @"6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
+
 #define HEARTRATE_SERVICE_ID                @"180D"
+#define HEARTRATE_CHARACT_ID                @"2A37"
 
 #define PEDOMETER_NEW_CHARACT_SET_UUID      @"FF21"
 #define PEDOMETER_OLD_CHARACT_TEST          @"FF22"

@@ -20,6 +20,7 @@
 @class ZRCOption;
 @class ZRGPSPoint;
 @class ZRWeather;
+@class ZR24Weather;
 @class ZRSchedule;
 @class ZRContacts;
 @class ZREHRWP;
@@ -71,6 +72,8 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 - (void)readDNDModeInfo;
 /**! Sent weather info to device for show in screen ,special devices support*/
 - (void)setWeather:(ZRWeather *)weather;
+/**! Set 24 hours weather data*/
+- (void)set24Weathers:(ZR24Weather *)weather;
 /**!Appearance time of the device, Got the response in method readResponseFromDevice:*/
 - (void)readManufactureDate;
 /**! Factory configuration, Got the response in method readResponseFromDevice:<##>*/
