@@ -72,7 +72,9 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 - (void)readDNDModeInfo;
 /**! Sent weather info to device for show in screen ,special devices support*/
 - (void)setWeather:(ZRWeather *)weather;
-/**! Set 24 hours weather data*/
+/**! Set Weather Unit ,0-Centigrade ,1-Fahrenheit @see TempUnit ,speacial devices support*/
+- (void)setWeatherUnit:(NSInteger)unit;
+/**! Set 24 hours weather data ,speacial devices support*/
 - (void)set24Weathers:(ZR24Weather *)weather;
 /**!Appearance time of the device, Got the response in method readResponseFromDevice:*/
 - (void)readManufactureDate;

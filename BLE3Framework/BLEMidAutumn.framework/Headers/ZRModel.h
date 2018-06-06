@@ -300,6 +300,9 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 @property (nonatomic,assign)WeatherType  type;
 @property (nonatomic,assign)NSInteger pm;
 
+- (NSInteger)celsiusDegree;
+- (NSInteger)fahrenheitDegree;
+
 @end
 
 
