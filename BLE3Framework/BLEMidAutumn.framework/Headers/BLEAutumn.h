@@ -26,8 +26,15 @@ typedef NS_ENUM(NSInteger, BLEProtocol) {
     /** 2017 designed for the color screen bracelet agreement, content level and BLEProtocol_EggRoll similar*/
     BLEProtocol_Colorful = 3,
     /** If you are not sure what your equipment agreement, choose this*/
+    BLEProtocol_HeadSet = 4,
     BLEProtocol_Any = 8,
 } ;
+
+typedef enum {
+    BLEDeviceCategoryBracelet = 1,
+    BLEDeviceCategoryWatch = 2,
+    BLEDeviceCategoryEarphone = 4,
+} BLEDeviceCategory;
 
 /**
  Core class, management search and connection, is also the entrance to the SDK.
@@ -39,6 +46,7 @@ typedef NS_ENUM(NSInteger, BLEProtocol) {
 
 @property (nonatomic ,weak) id<BleDiscoverDelegate>discoverDelegate;
 @property (nonatomic ,weak) id<BleConnectDelegate>connectDelegate;
+@property (nonatomic, assign) BLEDeviceCategory bleDeviceCategory;
 
 /**
  Represents the current state of a CBManager. <CBManagerState> <CBCentralManagerState> used for below iOS10.
@@ -122,7 +130,7 @@ typedef NS_ENUM(NSInteger, BLEProtocol) {
  @param zrPeripheral the Device had connected
  @return Follow the BLESolstice agreement object
  */
-- (id<BLESolstice>)solsticeWithConnectedPeripheral:(ZRBlePeripheral *)zrPeripheral;
+- (id<BLESolstice>)solsticeWithConnectedPeripheral:(ZRBlePeripheral *)zrPeripheral andDeviceCategory:(NSInteger)category;
 
 /**
  Call this method after initinal <BLESolstice> object; or ,you can not got any data callback from SDK.

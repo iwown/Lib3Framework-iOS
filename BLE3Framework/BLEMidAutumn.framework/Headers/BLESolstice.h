@@ -158,6 +158,10 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 - (void)readDeviceOption;
 - (void)readDeviceOptionWithBlock:(ReadDeviceSettingComplementation)rdsComplemention;
 
+/** read/set r1 option */
+- (void)readEarPhoneDeviceOptionWithBlock:(ReadDeviceSettingComplementation)rdsComplemention;
+- (void)setEarPhoneDeviceOption:(ZRHWOption *)deOption;
+
 /**! Get sport type list that device support. Got the response in method readResponseFromDevice:*/
 - (void)readSupportSports;
 

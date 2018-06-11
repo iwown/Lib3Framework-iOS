@@ -77,6 +77,7 @@ typedef NS_ENUM(NSInteger ,KSyscDataState){
     KSyscDataState62End,     //62结束
     KSyscDataState64End,     //64结束
     KSyscDataStateStartSyscF1Data,
+    KSyscDataState68End
 };
 
 

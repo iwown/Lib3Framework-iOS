@@ -27,6 +27,7 @@ typedef enum {
     ZRDITypeNormalHealth = 0x61, //Normal health data for Watch
     ZRDITypeGNSSData = 0x62, // GNSS data in Watch
     ZRDITypeECGHealth = 0x64,// ECG data in Watch
+    ZRDITypeEarPhoneData = 0x68
 } ZRDIType;
 
 @interface DDInfo : NSObject
@@ -63,6 +64,7 @@ typedef enum {
     HDTypeGNSSMinute = 0x62, //GNSS per minuter data
     HDTypeGNSSNow = 0x63,  //GNSS即时数据
     HDTypeECG = 0x64,  //ECG数据
+    HDTypeEarPhoneHealth = 0x68, //耳机运动数据
     
     HDTypeZGStep = 0x8901,
 } HDType;
@@ -237,3 +239,36 @@ typedef struct {
 @property (nonatomic, strong)NSString  *cmd;
 @end
 
+
+@interface ZRData68Model : ZRHealthData
+
+@property (nonatomic, strong)NSString  *uid;
+@property (nonatomic, strong)NSString  *data_from;
+@property (nonatomic, strong)NSString  *date;
+@property (nonatomic, assign)NSInteger data_type;
+@property (nonatomic, assign)NSInteger sport_type;
+@property (nonatomic, assign)NSInteger state_type;
+@property (nonatomic, assign)NSInteger step;
+@property (nonatomic, assign)NSInteger distance;
+@property (nonatomic, assign)NSInteger calorie;
+@property (nonatomic, assign)NSInteger rateofstride_max;
+@property (nonatomic, assign)NSInteger rateofstride_min;
+@property (nonatomic, assign)NSInteger rateofstride_avg;
+@property (nonatomic, assign)NSInteger flight_max;
+@property (nonatomic, assign)NSInteger flight_min;
+@property (nonatomic, assign)NSInteger flight_avg;
+@property (nonatomic, assign)NSInteger touchdown_max;
+@property (nonatomic, assign)NSInteger touchdown_min;
+@property (nonatomic, assign)NSInteger touchdown_avg;
+@property (nonatomic, assign)NSInteger touchdownpower_max;
+@property (nonatomic, assign)NSInteger touchdownpower_min;
+@property (nonatomic, assign)NSInteger touchdownpower_avg;
+@property (nonatomic, assign)NSInteger touchdownpower_balance;
+@property (nonatomic, assign)NSInteger touchdownpower_stop;
+@property (nonatomic, assign)NSInteger min_hr;
+@property (nonatomic, assign)NSInteger max_hr;
+@property (nonatomic, assign)NSInteger avg_hr;
+
+@property (nonatomic, strong)NSString  *cmd;
+
+@end

@@ -128,6 +128,20 @@ typedef enum{
  */
 @property (nonatomic ,assign) BOOL autoSport;
 
+/**
+ * switch that control whether double touch AP work
+ * 双击触摸开关
+ */
+@property (nonatomic ,assign) BOOL doubleTouch;
+
+/**
+ * switch that control whether wear recognize work
+ * 佩戴识别开关
+ */
+@property (nonatomic ,assign) BOOL wearRecognize;
+
 - (void)copyOptionForWatch:(ZRHWOption *)hwOption;
+
+- (void)copyOptionForHeadSet:(ZRHWOption *)hwOption;
 
 @end
