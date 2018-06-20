@@ -201,6 +201,7 @@ typedef NS_ENUM(NSInteger ,BLECmdResponse) {
     
     CMD_RESPONSE_CLOCK_AND_SCHEDULE = 0x84,   //NSDictionary 闹钟&日程数组
     CMD_RESPONSE_USERINFO_GET = 0x85,//ZGUserInfoModle
+    CMD_RESPONSE_STARTSETTING_GET = 0x8D,//ZRStartSetting
 };
 
 /**

@@ -460,3 +460,27 @@ typedef NS_ENUM (NSInteger,ZRRollMsgType){
 @end
 
 
+@interface ZRStartSetting : ZRModel
+
+/**
+ * Set the offset of the current GPS time zone, for example, Beijing is +8.
+ * 设置 GPS 当前时区的偏移, 比如说北京是+8。
+ */
+@property (nonatomic, assign) NSInteger utc_offset;
+
+/**
+ * Greeting display content, max 10 bytes;
+ * 问候语的显示内容, 开机显示问候语最大10个byte。
+ */
+@property (nonatomic, strong) NSString *username_data;
+
+/**
+ * 13BYTE 备用
+ */
+@property (nonatomic, strong) NSString *blank;
+
+- (NSString *)getSetCmdStr;
+
+@end
+
+

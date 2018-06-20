@@ -30,6 +30,7 @@
 @class ZGUserInfoModle;
 @class ZRTargetOnceDay;
 @class ZRMesgPush;
+@class ZRStartSetting;
 
 typedef void(^ReadDeviceSettingComplementation)(id obj);
 
@@ -205,6 +206,11 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 /**! Read. Got the response in method readResponseFromDevice:*/
 - (void)readMessagePush;
 
+/** Set boot screen */
+- (void)setStartSetting:(ZRStartSetting *)sset;
+/**! Read. Got the response in method readResponseFromDevice:*/
+- (void)readStartSetting;
+
 #pragma mark -MESSAGE ACTION-消息操作
 /*!
  * Push string, Example: [ZRBLE pushStr:@"This is a test string"];
@@ -335,6 +341,9 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 - (void)endExercise;
 - (void)pauseExercise;
 
+
+
+- (void)switchStandardHeartRate:(BOOL)open;
 
 @end
 
