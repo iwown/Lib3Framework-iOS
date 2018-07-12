@@ -204,6 +204,11 @@
 
 #pragma mark -
 - (void)responseOfExercise:(NSString *)string;
+/*
+ @param status (0:SUCCESS, 1:ERROR, 2:NOT_SUPPORTED, 3:INVALID_PARAM, 5:INVALID_STATE, 6:DELAY_REPLAY, 7:NOT_FOUND, 8:IS_BUSY)
+ */
+- (void)responseOfExerciseStatus:(NSInteger)status;
+
 
 @end
 

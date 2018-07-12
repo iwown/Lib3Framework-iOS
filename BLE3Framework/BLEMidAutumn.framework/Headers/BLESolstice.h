@@ -338,9 +338,9 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 
 //微教练
 - (void)startExercise;
+- (void)startExerciseWithType:(sd_sportType)sportType;
 - (void)endExercise;
 - (void)pauseExercise;
-
 
 
 - (void)switchStandardHeartRate:(BOOL)open;

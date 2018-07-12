@@ -77,7 +77,7 @@ typedef enum {
 - (void)updateHeartRateParam:(NSString *)body;
 
 - (DFUPlatform)platformForDfu;
-
+- (NSInteger)lowestPowerForDfu;
 @end
 
 

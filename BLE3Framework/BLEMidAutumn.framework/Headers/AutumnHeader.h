@@ -137,6 +137,7 @@ typedef NS_ENUM(NSInteger ,BLECmdResponse) {
     CMD_RESPONSE_DEVICE_HW_OPTION_SUPPERT = 0x0a, // Hardware Option type Support
     CMD_RESPONSE_DEVICE_MANUFACTURE_DATE = 0x0b,
     CMD_RESPONSE_DEVICE_FACTORY_CONF = 0x0c,
+    CMD_RESPONSE_HEADSET_PARAM = 0x0e,
     
     CMD_RESPONSE_CONFIG_SET_TIME = 0x10,                 // Time
     CMD_RESPONSE_CONFIG_GET_TIME = 0x11,
@@ -316,6 +317,10 @@ typedef NS_ENUM(NSInteger, sd_sportType) {
     
     SD_SPORT_TYPE_MASK                           = 0x80 ,//掩码
     
+    SD_SPORT_TYPE_GROUPCLASS                     = 0x30 ,//团课
+    SD_SPORT_TYPE_PERSONALEDUCATION              = 0x30 ,//私教
+    SD_SPORT_TYPE_TREADMILL                      = 0x30 ,//跑步机
+    SD_SPORT_TYPE_FREETRAINING                   = 0x30 ,//自由训练
     SD_SPORT_TYPE_BADMINTON                      = 0x80 ,//羽毛球
     SD_SPORT_TYPE_BASKETBALL                     = 0x81 ,//篮球
     SD_SPORT_TYPE_FOOTBALL                       = 0x82 ,//足球
@@ -341,7 +346,9 @@ typedef NS_ENUM(NSInteger, sd_sportType) {
     
     SD_SPORT_TYPE_HEART_RATE                     = 0xf0 ,//心率
     
-    SD_SPORT_TYPE_WALKING_SAVE                   = 0x100 ,//走路
+    SD_SPORT_TYPE_OTHER                          = 0xFF ,//其他'
+    SD_SPORT_TYPE_WALKING_SAVE                   = 0x100 ,//步行
+
 } ;
 
 
