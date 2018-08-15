@@ -211,6 +211,12 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 /**! Read. Got the response in method readResponseFromDevice:*/
 - (void)readStartSetting;
 
+
+/** Read. Got the response in method readResponseFromDevice:
+ *  获取彩屏手环的所有设置信息
+ */
+- (void)readUserInfo;
+
 #pragma mark -MESSAGE ACTION-消息操作
 /*!
  * Push string, Example: [ZRBLE pushStr:@"This is a test string"];
@@ -323,18 +329,7 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 /**! SDK internal use, do not need to use it*/
 - (void)stopSpecialData:(SD_TYPE)sdType;
 
-/*
- * Developer test api
- */
-- (void)write09WithBOOL:(BOOL)isOpen DEPRECATED_ATTRIBUTE;
-/*
- * Clear user's data on device.
- */
-- (void)clearData DEPRECATED_ATTRIBUTE;
-
-
 -(void)testECGModel;
-
 
 //微教练
 - (void)startExercise;

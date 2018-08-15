@@ -21,6 +21,7 @@
 
 #define HEARTRATE_SERVICE_ID                @"180D"
 #define HEARTRATE_CHARACT_ID                @"2A37"
+#define NEW_HEARTRATE_CHARACT_ID                @"2AFF"
 
 #define PEDOMETER_NEW_CHARACT_SET_UUID      @"FF21"
 #define PEDOMETER_OLD_CHARACT_TEST          @"FF22"
@@ -65,9 +66,10 @@ typedef NS_ENUM(NSInteger ,SD_TYPE) {
 typedef NS_ENUM(NSInteger ,KSyscDataState){
     KSyscDataStateBegin = 0,
     KSyscDataStateSummaryEnd,
+    KSyscDataStateStepEnd,
     KSyscDataStateSportEnd,
-    KSyscDataStateSleepEnd ,
-    KSyscDataStateHeartRateEnd ,
+    KSyscDataStateSleepEnd,
+    KSyscDataStateHeartRateEnd,
     KSyscDataStateGNSSEnd,
     KSyscDataStateECGEnd,
     KSyscDataStateIsFinished ,
@@ -199,6 +201,7 @@ typedef NS_ENUM(NSInteger ,BLECmdResponse) {
     CMD_RESPONSE_HEALTH_MINUTE_DATA = 0x61,
     CMD_RESPONSE_GNSS_MINUTE_DATA = 0x62,
     CMD_RESPONSE_GNSS_MINUTE_DATA_TEST = 0x63,
+    CMD_RESPONSE_GNSS_READ_TARGET = 0x67,
     
     CMD_RESPONSE_CLOCK_AND_SCHEDULE = 0x84,   //NSDictionary 闹钟&日程数组
     CMD_RESPONSE_USERINFO_GET = 0x85,//ZGUserInfoModle
@@ -318,9 +321,9 @@ typedef NS_ENUM(NSInteger, sd_sportType) {
     SD_SPORT_TYPE_MASK                           = 0x80 ,//掩码
     
     SD_SPORT_TYPE_GROUPCLASS                     = 0x30 ,//团课
-    SD_SPORT_TYPE_PERSONALEDUCATION              = 0x30 ,//私教
-    SD_SPORT_TYPE_TREADMILL                      = 0x30 ,//跑步机
-    SD_SPORT_TYPE_FREETRAINING                   = 0x30 ,//自由训练
+    SD_SPORT_TYPE_PERSONALEDUCATION              = 0x31 ,//私教
+    SD_SPORT_TYPE_TREADMILL                      = 0x32 ,//跑步机
+    SD_SPORT_TYPE_FREETRAINING                   = 0x33 ,//自由训练
     SD_SPORT_TYPE_BADMINTON                      = 0x80 ,//羽毛球
     SD_SPORT_TYPE_BASKETBALL                     = 0x81 ,//篮球
     SD_SPORT_TYPE_FOOTBALL                       = 0x82 ,//足球

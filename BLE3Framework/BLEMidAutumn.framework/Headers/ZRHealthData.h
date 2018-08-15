@@ -249,8 +249,8 @@ typedef struct {
 @property (nonatomic, assign)NSInteger sport_type;
 @property (nonatomic, assign)NSInteger state_type;
 @property (nonatomic, assign)NSInteger step;
-@property (nonatomic, assign)NSInteger distance;
-@property (nonatomic, assign)NSInteger calorie;
+@property (nonatomic, assign)float distance;
+@property (nonatomic, assign)float calorie;
 @property (nonatomic, assign)NSInteger rateofstride_max;
 @property (nonatomic, assign)NSInteger rateofstride_min;
 @property (nonatomic, assign)NSInteger rateofstride_avg;

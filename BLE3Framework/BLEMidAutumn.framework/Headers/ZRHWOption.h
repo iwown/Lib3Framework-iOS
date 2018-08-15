@@ -32,9 +32,11 @@ typedef enum{
     braceletLanguageKorean = 9,
     braceletLanguageArabic = 10,
     braceletLanguageVietnamese = 11,
-    braceletLanguageThai = 12,
-    braceletLanguageTurkish = 13,
+    braceletLanguagePolish = 12,
+    braceletLanguageRomanian = 13,
     braceletLanguageSwedish = 14,
+    braceletLanguageThai = 15,
+    braceletLanguageTurkish = 16,
     braceletLanguageSimpleMarkings = 0xff, //This setting means no char ,all information replaced by figure. show simple icon only.
 }braceletLanguage;
 

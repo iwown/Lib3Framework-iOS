@@ -86,12 +86,9 @@
    In <BLEProtocol_colorful> device ,these methods would not be invoked when you had implement method responseOfConnectStatus:
  */
 - (void)readRequiredInfoAfterConnect;
-/**
- *  I suggest you here to complete the need for other operations.
- */
-- (void)setBLEParameterAfterConnect;
 
 @optional
+- (void)setBLEParameterAfterConnect DEPRECATED_ATTRIBUTE/*{SDK WILL COMPLEDTED WHEN REVEIVED (readRequiredInfoAfterConnect:). YOU MUST CONTROL ALL CMD YOUR NEED, MESS CMDS MIGHT CAUSE COMMUNICATE BREAKDOWN}*/;
 
 /**
  *  This method would be invoked when the app connected a device who is supportted by protocol2_0

@@ -25,8 +25,9 @@ typedef NS_ENUM(NSInteger, BLEProtocol) {
     BLEProtocol_Watch = 2,
     /** 2017 designed for the color screen bracelet agreement, content level and BLEProtocol_EggRoll similar*/
     BLEProtocol_Colorful = 3,
-    /** If you are not sure what your equipment agreement, choose this*/
+    /** 2018 designed for R series ear phone, inhert from BLEProtocol_Watch*/
     BLEProtocol_HeadSet = 4,
+    /** If you are not sure what your equipment agreement, choose this*/
     BLEProtocol_Any = 8,
 } ;
 
@@ -46,6 +47,7 @@ typedef enum {
 
 @property (nonatomic ,weak) id<BleDiscoverDelegate>discoverDelegate;
 @property (nonatomic ,weak) id<BleConnectDelegate>connectDelegate;
+
 @property (nonatomic, assign) BLEDeviceCategory bleDeviceCategory;
 
 /**
