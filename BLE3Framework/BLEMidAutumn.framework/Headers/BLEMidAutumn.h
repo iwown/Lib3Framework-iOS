@@ -20,8 +20,13 @@ FOUNDATION_EXPORT const unsigned char BLEMidAutumnVersionString[];
 #import <BLEMidAutumn/AutumnHeader.h>
 #import <BLEMidAutumn/BLEquinox.h>
 #import <BLEMidAutumn/BLESolstice.h>
+#import <BLEMidAutumn/SolsticeImpl.h>
+#import <BLEMidAutumn/BLEDataHandle.h>
 #import <BLEMidAutumn/ZRBlePeripheral.h>
 #import <BLEMidAutumn/ZRModel.h>
 #import <BLEMidAutumn/ZRHWOption.h>
 #import <BLEMidAutumn/ZRHealthData.h>
+#import <BLEMidAutumn/NSStringUtils.h>
+#import <BLEMidAutumn/IVBLEUtils.h>
+#import <BLEMidAutumn/IVBLEDefaults.h>
 

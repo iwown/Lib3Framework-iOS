@@ -41,6 +41,15 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 @protocol BLESolstice <NSObject,CBPeripheralDelegate>
 
 
+@required
+/**
+ * Get solstice instance by peripheral device.
+ */
++ (id<BLESolstice>)cBLESolstice:(ZRBlePeripheral *)bleDevice;
+
+/**! BLE_Protocol*/
+- (NSInteger)getBleProtocol;
+
 /**
  This method can help you to get that Device object you are connected to.
 
@@ -52,6 +61,8 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
  * Call this method if you had change the peripheral's delegate for any other object.
  */
 - (void)registerDeviceDelegate;
+
+@optional
 #pragma mark- BLE
 /**! Read device Info. Got the response in method readResponseFromDevice:*/
 - (void)readDeviceInfo;
@@ -207,7 +218,7 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 - (void)readMessagePush;
 
 /** Set boot screen */
-- (void)setStartSetting:(ZRStartSetting *)sset;
+- (void)setStartSetting:(ZRStartSetting *)sset IsOld:(BOOL)isOld;
 /**! Read. Got the response in method readResponseFromDevice:*/
 - (void)readStartSetting;
 
@@ -339,6 +350,69 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 
 
 - (void)switchStandardHeartRate:(BOOL)open;
+
+#pragma mark - 彩屏GPS
+//GPS 数据纪录范围
+- (void)syscGPSDataInfo;
+- (void)syscGPSDetailDataWithday:(NSInteger)day;
+
+#pragma mark - 辅助定位
+
+#pragma mark  辅助定位流程
+/*
+ * 写cep文件 流程如下：
+ * 1.判断是否正在更新CEP文件，是就return，结束，否就接着往下走；
+ * 2.检查手环当天是否更新过CEP，是就return，结束，否就接着往下走；
+ * 3.开启AGPS更新，开启成功，就开始传CEP文件，失败就关闭AGPS更新，结束；
+ * 4.CEP文件传完了之后，等待手环发校验结果，收到结果，关闭AGPS更新，结束；
+ * writeGPSCEPFile SDK里面控制这套流程 APP只需要调用writeGPSCEPFile，在这之前APP要先调用checkGPSInBandIsOpen
+ * @param path cep文件本地路径（包含后缀.bin）
+ */
+- (void)writeGPSCEPFile:(NSString *)path;
+- (void)startAGPS;
+- (void)endAGPS;
+- (void)sendAGPSFile;
+
+#pragma mark  辅助定位发指令
+//判断手环是否正在GPS运动，当手环处于GPS运动时，不能读取GPS数据和更新AGPS
+- (void)checkGPSInBandIsOpen;
+/*
+ * APP控制流程用以下方法
+ */
+//检查手环当天是否更新过CEP
+- (void)checkAGPSIsUpdateToday;
+//开启AGPS更新
+- (void)openAGPS;
+//关闭AGPS更新
+- (void)closeAGPS;
+/*
+ * 发送CEP文件，CEP文件必须是3天的，需要拆包 传送给设备的AGPS数据分开传送，一次一个小包传送256BYTE，最后一个小包，index=0x88，最高位=1代表这包数据传输是最后一包，等设备回复后，继续发送下一个256BYTE, 如此一直到2048个BYTE；等设备回复后，如果还有数据，一样的流程发下一个2018，没有就等待校验结果，cep文件是3天的，手环固定会在收到14个2048之后，自动发起校验，APP收到校验结果，关闭AGPS更新，结束；
+ * @param dataStr cep文件拆包后的一条数据  index：数据所在位置
+ */
+- (void)writeCepData:(NSString *)dataStr Index:(int)index;
+
+
+#pragma mark- PB_FileUpdate
+/****
+ fuF.fd = (FUType)[dict[@"fd"] integerValue];
+ fuF.fileName = dict[@"fileName"];
+ fuF.fileSize = (uint32_t)[dict[@"fileSize"] integerValue];
+ fuF.fileCrc32 = (uint32_t)[dict[@"fileCrc32"] integerValue];
+ fuF.fileOffset = (uint32_t)[dict[@"fileOffset"] integerValue];
+ fuF.crc32AtOffset = (uint32_t)[dict[@"crc32AtOffset"] integerValue];
+ */
+- (void)pbFileUpdateInit:(NSDictionary *)dict;
+
+/****
+ dataR.fd = (FUType)[dataDict[@"fd"] integerValue];
+ dataR.fileOffset = (uint32_t)[dataDict[@"fileOffset"] integerValue];
+ dataR.crc32AtOffset = (uint32_t)[dataDict[@"crc32AtOffset"] integerValue];
+ dataR.buf = dataDict[@"buf"];
+ */
+- (void)pbFileUpdateData:(NSDictionary *)dict;
+/**! 0-GPS, 1-FONT*/
+- (void)pbFileUpdateExit:(NSInteger)fd;
+
 
 @end
 

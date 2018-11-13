@@ -63,11 +63,6 @@
  */
 - (void)solsticeDidFailToConnectDevice:(ZRBlePeripheral *)device andError:(NSError *)error;
 
-/**
- *  invoked when connect more than 10 second.
- */
-- (void)solsticeConnectTimeOut;
-
 /**! Bluetooth state changed off.<##>*/
 - (void)centralManagerStatePoweredOff;
 /**! Bluetooth state changed on.<##>*/
@@ -180,7 +175,7 @@
  当获取8900、8901、8902、8903、8904类型的数据的时候，写指令发出后，没有收到手环传回的数据，就会调取这个回调；
  app可以根据这个回调方法，在方法内部给同步进度的progress做虚拟值赋值处理；
 
- @param type 8900、8901、8902、8903、8904
+ @param type *SCQASCType*
  */
 - (void)responseOfGetDataTimeOutWithDataType:(NSInteger)type;
 
@@ -205,7 +200,54 @@
  @param status (0:SUCCESS, 1:ERROR, 2:NOT_SUPPORTED, 3:INVALID_PARAM, 5:INVALID_STATE, 6:DELAY_REPLAY, 7:NOT_FOUND, 8:IS_BUSY)
  */
 - (void)responseOfExerciseStatus:(NSInteger)status;
+/*
+ @param sportType
+ */
+- (void)responseOfExerciseSport:(sd_sportType)sportType;
 
+#pragma mark- PB_FileUpdate
+- (void)pbFileUpdateDesc:(NSDictionary *)fileDesc;
+/**!
+ type : 0-GPS, 1-FONT
+ status : 0-isOK, 1-Error ,2-Error
+ error : nil mean successful
+ */
+- (void)pbFileUpdateInit:(NSInteger)type andStatus:(NSInteger)status andError:(NSError *)error;
+
+/**!
+ FUDataResponse_Status_Ok = 0,
+ FUDataResponse_Status_ErrorParams = 1,
+ FUDataResponse_Status_ErrorOffsetMismatch = 2,
+ FUDataResponse_Status_ErrorCrc32Mismatch = 3,
+ FUDataResponse_Status_ErrorInner = 4,
+ */
+- (void)pbFileUpdateData:(NSInteger)type andStatus:(NSInteger)status andFileOfSet:(NSInteger)fileOfSet andCrc32AtFileOfSet:(NSInteger)crc32 andError:(NSError *)error;
+
+- (void)pbFileUpdateExitStatus:(NSInteger)status;
+#pragma mark -
+
+/**!
+检查是否手环是否开启GPS运动
+ */
+- (void)responseOfCheckZgGPSIsOpen:(BOOL)isOpen;
+
+/**!
+ @param status (0:SUCCESS, 1:ERROR)
+ */
+- (void)responseOfZgAGPSUpdatedStatus:(NSInteger)status;
+
+/**! Simple progress in Percent<##>*/
+- (void)updateAGPSDataProgress:(NSInteger)progress;
+
+/*
+ AGPS升级结束
+ */
+- (void)endUpdateAGPSData;
+
+
+#pragma mark -
+
+- (void)responseOfBloodPressureData:(NSArray *)data;
 
 @end
 

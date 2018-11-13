@@ -20,10 +20,14 @@ typedef struct {
     uint16_t year;
     uint8_t month;
     uint8_t day;
+}RecorDate;
+
+typedef struct {
+    RecorDate rcDate;
     uint8_t hour;
     uint8_t minute;
     uint8_t second;
-}RecorDate;
+}RecortDate;
 
 typedef struct {
     uint8_t totaldays;
@@ -33,7 +37,7 @@ typedef struct {
 
 typedef struct {
     uint8_t totaldays;
-    RecorDate storeDates[7];
+    RecortDate storeDates[7];
 }DateStoreInfo;
 
 typedef struct {
