@@ -351,10 +351,15 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 
 - (void)switchStandardHeartRate:(BOOL)open;
 
+//同步血压数据
+- (void)syscBloodPressureData;
+
+
 #pragma mark - 彩屏GPS
 //GPS 数据纪录范围
 - (void)syscGPSDataInfo;
 - (void)syscGPSDetailDataWithday:(NSInteger)day;
+
 
 #pragma mark - 辅助定位
 
