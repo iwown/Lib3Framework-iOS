@@ -381,6 +381,8 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 #pragma mark  辅助定位发指令
 //判断手环是否正在GPS运动，当手环处于GPS运动时，不能读取GPS数据和更新AGPS
 - (void)checkGPSInBandIsOpen;
+//检查手环是否开启AGPS升级
+- (void)checkAGPSIsOpen;
 /*
  * APP控制流程用以下方法
  */

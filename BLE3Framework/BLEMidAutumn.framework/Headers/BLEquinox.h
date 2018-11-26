@@ -232,6 +232,11 @@
 - (void)responseOfCheckZgGPSIsOpen:(BOOL)isOpen;
 
 /**!
+ 检查是否手环是否开启AGPS
+ */
+- (void)responseOfCheckZgAGPSIsOpen:(BOOL)isOpen;
+
+/**!
  @param status (0:SUCCESS, 1:ERROR)
  */
 - (void)responseOfZgAGPSUpdatedStatus:(NSInteger)status;

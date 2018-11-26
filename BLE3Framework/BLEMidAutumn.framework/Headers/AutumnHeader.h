@@ -49,7 +49,10 @@ typedef NS_ENUM(NSInteger ,KSyscDataState){
     KSyscDataStateSportEnd,
     KSyscDataStateSleepEnd ,
     KSyscDataStateHeartRateEnd,
+    KSyscDataStateGPSDateInfoEnd,
     KSyscDataStateGPSEnd,
+    KSyscDataStateBPDateInfoEnd,
+    KSyscDataStateBPEnd,
 
     KSyscDataStateGNSSEnd,
     KSyscDataStateECGEnd,
