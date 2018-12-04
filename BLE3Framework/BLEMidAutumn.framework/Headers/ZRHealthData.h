@@ -43,13 +43,10 @@ typedef enum {
 @end
 
 @class ZRHealthData;
-
 @interface ZRDataInfo : NSObject
 
 @property (nonatomic ,strong) NSArray <DDInfo *> *ddInfos;
 @property (nonatomic ,assign) NSUInteger dataType;
-@property (nonatomic ,assign) NSUInteger storeLatest;
-@property (nonatomic ,assign) NSUInteger totalDay;
 
 + (instancetype)zrDataInfoFromDateStoreInfo:(DateStoreInfo)dsInfo;
 + (instancetype)zrDataInfoFromTDateStoreInfo:(TDateStoreInfo)tdsInfo;
@@ -59,7 +56,6 @@ typedef enum {
 - (NSArray <NSDate *>*)getDateArray;
 
 @end
-
 
 
 typedef enum {
@@ -89,8 +85,8 @@ typedef struct {
 
 @interface ZRHealthData : NSObject
 
-@property (nonatomic ,assign) HealthDataInfo hdInfo;
-@property (strong ,nonatomic) NSDate *recordDate;
+@property (nonatomic ,assign)HealthDataInfo hdInfo;
+@property (strong ,nonatomic)NSDate *recordDate;
 @property (class, copy ,nonatomic)NSString *dataFrom;
 @property (nonatomic ,assign) int seq;
 
@@ -194,6 +190,7 @@ typedef struct {
 
 @property (nonatomic, strong)NSString  *uid;
 @property (nonatomic, strong)NSString  *data_from;
+@property (nonatomic, strong)NSString  *date;
 @property (nonatomic, assign)NSInteger data_type;//16进制   0010 0001=21
 @property (nonatomic, assign)NSInteger sport_type;  //10进制
 @property (nonatomic, assign)NSInteger step;
@@ -216,7 +213,7 @@ typedef struct {
 @property (nonatomic, assign)NSInteger dbp;
 @property (nonatomic, assign)NSInteger bpm;
 
-@property (nonatomic, strong) id sleepCmd;
+@property (nonatomic, strong)NSString  *cmd;
 
 @end
 
@@ -228,13 +225,13 @@ typedef struct {
 
 @property (nonatomic, strong)NSString  *uid;
 @property (nonatomic, strong)NSString  *data_from;
+@property (nonatomic, strong)NSString  *date;
 @property (nonatomic, assign)NSInteger freq;
 @property (nonatomic, assign)NSInteger num;//经纬度个数
 @property (nonatomic, copy)NSString *jsonData;//经纬度 Json字符串
 
 @property (nonatomic ,strong) NSArray *dataArray;//经纬度 数组
 @property (nonatomic, strong)NSString  *cmd;
-
 @end
 
 /**
@@ -242,12 +239,11 @@ typedef struct {
  */
 @interface ZRECGModel : ZRHealthData
 
-@property (nonatomic, strong) NSString  *uid;
-@property (nonatomic, strong) NSString  *data_from;
-@property (nonatomic, copy) NSString  *jsonData;// Json字符串
-@property (nonatomic ,strong) NSArray *dataArray;
-@property (nonatomic, strong) NSString  *cmd;
-
+@property (nonatomic, strong)NSString  *uid;
+@property (nonatomic, strong)NSString  *data_from;
+@property (nonatomic, strong)NSString  *date;
+@property (nonatomic, copy)NSString  *jsonData;// Json字符串
+@property (nonatomic, strong)NSString  *cmd;
 @end
 
 
@@ -255,6 +251,7 @@ typedef struct {
 
 @property (nonatomic, strong)NSString  *uid;
 @property (nonatomic, strong)NSString  *data_from;
+@property (nonatomic, strong)NSString  *date;
 @property (nonatomic, assign)NSInteger data_type;
 @property (nonatomic, assign)NSInteger sport_type;
 @property (nonatomic, assign)NSInteger state_type;
@@ -283,7 +280,6 @@ typedef struct {
 
 @end
 
-
 @interface ZRExerciseDataModel : ZRHealthData
 
 @property (nonatomic, assign)NSInteger exerciseSteps;      //训练的步数，实时更新
@@ -301,10 +297,12 @@ typedef struct {
 
 @end
 
-
 @interface ZRBloodPressureModel : ZRHealthData
 
 @property (nonatomic, assign)NSInteger sbp;      //训练的步数，实时更新
 @property (nonatomic, assign)NSInteger dbp;   //训练的卡路里；一分钟更新一次；
 
 @end
+
+
+

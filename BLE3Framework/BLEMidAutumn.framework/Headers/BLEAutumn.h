@@ -10,6 +10,12 @@
 #import "BLESolstice.h"
 #import <Foundation/Foundation.h>
 
+/*!
+ *  @enum BLEProtocol
+ *
+ *  @discussion  Distinguish between data communication protocols
+ *
+ */
 typedef NS_ENUM(NSInteger, BLEProtocol) {
     /** not Speciall*/
     BLEProtocol_Null = 0,
@@ -21,11 +27,9 @@ typedef NS_ENUM(NSInteger, BLEProtocol) {
     BLEProtocol_Colorful = 3,
     /** 2018 designed for R series ear phone, inhert from BLEProtocol_Watch*/
     BLEProtocol_HeadSet = 4,
-    BLEProtocol_PB = 5,
     /** If you are not sure what your equipment agreement, choose this*/
     BLEProtocol_Any = 8,
 } ;
-
 
 typedef enum {
     BLEDeviceCategoryBracelet = 1,
@@ -56,7 +60,6 @@ typedef enum {
  * Get the peripheral state
  */
 - (CBPeripheralState)getPeripheralState;
-
 /**
  * Get current protocol type;
  */
@@ -113,7 +116,8 @@ typedef enum {
 - (void)cancelConnect;
 
 /*Class Method ,use @CODE{[[BLEAutumn alloc] init];} and @CODE{setBleProtocol:} is samed */
-+ (instancetype)midAutumn;
++ (instancetype)midAutumn:(BLEProtocol)blep;
+- (void)setBleProtocol:(BLEProtocol)blep;
 
 /**
  * If you need a <BLESolstice> object to communicate with device, after searching and connecting to the device with BLEAutumn, please using the this method initinal the object, or you have a peripheral device that has been connected without BLEAutumn, you can use the @see solsticeWithConnectedPeripheral: method.

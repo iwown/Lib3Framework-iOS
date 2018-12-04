@@ -12,7 +12,32 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 #define BLE_MAIN_RESTORE_IDENTIFIER @"com.iwown.autumn"
-#define BLE_MID_AUTUMN_PLIST @"midAutumn"  //Config file name in @"midAutumn.plist";
+
+#define PEDOMETER_NEW_SERVICE_UUID          @"FF20"
+#define PEDOMETER_SPOTA_SERVICE_UUID        @"FEF5"  //Dialog升级服务
+#define PEDOMETER_WATCH_SERVICE_UUID        @"18A0"
+#define PEDOMETER_MTK_SERVICE_UUID          @"181A"
+#define Z4_SERVICE_ID                       @"6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
+
+#define HEARTRATE_SERVICE_ID                @"180D"
+#define HEARTRATE_CHARACT_ID                @"2A37"
+#define NEW_HEARTRATE_CHARACT_ID            @"2AFF"
+
+#define PEDOMETER_NEW_CHARACT_SET_UUID      @"FF21"
+#define PEDOMETER_OLD_CHARACT_TEST          @"FF22"
+#define PEDOMETER_NEW_CHARACT_TEST          @"FF23"
+#define SCALE_S2_SERVICE_UUID               @"FF30"
+#define SCALE_S2_WRITE_CHARACTERY_UUID      @"FF31"
+#define SCALE_S2_READ_CHARACTERY_UUID       @"FF33"
+#define PEDOMETER_MTK_CHARACT_FOTA_READ     @"2AA0"
+#define PEDOMETER_MTK_CHARACT_FOTA_WRITE    @"2AA1"
+#define Z4_CHARACTER_ID_NOTIFY              @"6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
+#define Z4_CHARACTER_ID_WRITE               @"6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
+
+#define PEDOMETER_OLD_CHARACT_VALUE_PERFIX  @"22ff"
+#define PEDOMETER_NEW_CHARACT_VALUE_PERFIX  @"23ff"
+#define PEDOMETER_NFC_DATA_PREFIX           @"25ff"
+#define SCALE_S2_CHARACT_VALUE_PERFIX       @"33ff"
 
 /** Data types for different protocol communications*/
 typedef NS_ENUM(NSInteger ,SD_TYPE) {
@@ -26,17 +51,13 @@ typedef NS_ENUM(NSInteger ,SD_TYPE) {
     SD_TYPE_STEP = 0x06,//知格，当日1440分钟步数
     
     SD_TYPE_DATA_INFO = 0x08,
-    SD_TYPE_DATA_IT_6X = 0x09, //读取手表61|62|64的indextable
     
     SD_TYPE_GNSS_SEGMENT = 0x10,
     SD_TYPE_GNSS_REAL_TIME = 0x11,
     
-    SD_TYPE_DATA_IT_68 = 0x67,
-    SD_TYPE_EARPHONE_HEALTH = 0x68, //读取耳机68的indextable
-    
     SD_TYPE_DATA_NORMAL = 0x80, /**SD_TYPE_SPORT&&
-                                 SD_TYPE_SLEEP(IF Support)&&
-                                 SD_TYPE_HEART_RATE(IF Support)*/
+                              SD_TYPE_SLEEP(IF Support)&&
+                              SD_TYPE_HEART_RATE(IF Support)*/
     SD_TYPE_DATA_SUMMARY = 0xF1, //SUMMARY DATA FOR REVIEW
     SD_TYPE_LAST = 0xFF,
 } ;
@@ -47,13 +68,10 @@ typedef NS_ENUM(NSInteger ,KSyscDataState){
     KSyscDataStateSummaryEnd,
     KSyscDataStateStepEnd,
     KSyscDataStateSportEnd,
-    KSyscDataStateSleepEnd ,
+    KSyscDataStateSleepEnd,
     KSyscDataStateHeartRateEnd,
-    KSyscDataStateGPSDateInfoEnd,
     KSyscDataStateGPSEnd,
-    KSyscDataStateBPDateInfoEnd,
-    KSyscDataStateBPEnd,
-
+    
     KSyscDataStateGNSSEnd,
     KSyscDataStateECGEnd,
     KSyscDataStateIsFinished ,
@@ -336,7 +354,9 @@ typedef NS_ENUM(NSInteger, sd_sportType) {
     
     SD_SPORT_TYPE_OTHER                          = 0xFF ,//其他'
     SD_SPORT_TYPE_WALKING_SAVE                   = 0x100 ,//步行
+
 } ;
+
 
 typedef void (^ReadAlarmClockResponse)(NSArray *);
 typedef void (^ReadSheduleResponse)(NSDictionary *);

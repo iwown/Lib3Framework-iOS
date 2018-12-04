@@ -162,7 +162,12 @@ typedef enum {
 @property(nonatomic,copy)NSString *title;
 @property(nonatomic,copy)NSString *subTitle;
 
-@property(nonatomic,strong)NSDate *date;
+@property(nonatomic,assign)NSInteger year;
+@property(nonatomic,assign)NSInteger month;
+@property(nonatomic,assign)NSInteger day;
+
+@property(nonatomic,assign)NSInteger hour;
+@property(nonatomic,assign)NSInteger minute;
 
 /**
  高3位是铃声 0~7对应不同铃声
@@ -175,7 +180,8 @@ typedef enum {
 @property(nonatomic,assign)BLEScheduleState state;
 
 @property(nonatomic,strong)NSDate   *invalidDate;
-- (instancetype)initWithTitile:(NSString *)title subTitle:(NSString *)subTitle andDate:(NSDate *)date;
+
+- (instancetype)initWithTitile:(NSString *)title subTitle:(NSString *)subTitle year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
 @end
 
 typedef NS_ENUM (NSInteger,ShakeType){
@@ -266,7 +272,7 @@ typedef NS_ENUM (NSInteger,DNDType){
 @end
 
 
-typedef NS_ENUM(NSInteger,IVWeatherType) {
+typedef NS_ENUM(NSInteger,WeatherType) {
     WeatherFine = 0,            //晴
     WeatherCloudy = 1,          //多云
     WeatherOvercast = 2,        //阴天
@@ -291,7 +297,7 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 
 @property (nonatomic,assign)NSInteger temp;//温度值
 @property (nonatomic,assign)TempUnit unit;
-@property (nonatomic,assign)IVWeatherType  type;
+@property (nonatomic,assign)WeatherType  type;
 @property (nonatomic,assign)NSInteger pm;
 
 - (NSInteger)celsiusDegree;
@@ -304,7 +310,7 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 
 @property (nonatomic,assign)NSInteger tempMax;
 @property (nonatomic,assign)NSInteger tempMin;
-@property (nonatomic,assign)IVWeatherType type;
+@property (nonatomic,assign)WeatherType type;
 
 @end
 
@@ -468,8 +474,9 @@ typedef NS_ENUM (NSInteger,ZRRollMsgType){
  */
 @property (nonatomic, strong) NSString *username_data;
 
+
 @property (nonatomic, assign) NSInteger user_height;
-/*0-Male 1-Female*/
+
 @property (nonatomic, assign) NSInteger user_gender;
 
 @property (nonatomic, assign) NSInteger srcSbp_LB;
@@ -491,7 +498,7 @@ typedef NS_ENUM (NSInteger,ZRRollMsgType){
 @property (nonatomic, assign) BOOL bp_enable;
 
 /**
- * 2BYTE 备用
+ * 3BYTE 备用
  */
 @property (nonatomic, strong) NSString *Reseve;
 

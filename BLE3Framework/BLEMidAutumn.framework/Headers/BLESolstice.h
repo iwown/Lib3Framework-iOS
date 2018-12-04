@@ -41,15 +41,6 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 @protocol BLESolstice <NSObject,CBPeripheralDelegate>
 
 
-@required
-/**
- * Get solstice instance by peripheral device.
- */
-+ (id<BLESolstice>)cBLESolstice:(ZRBlePeripheral *)bleDevice;
-
-/**! BLE_Protocol*/
-- (NSInteger)getBleProtocol;
-
 /**
  This method can help you to get that Device object you are connected to.
 
@@ -61,8 +52,6 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
  * Call this method if you had change the peripheral's delegate for any other object.
  */
 - (void)registerDeviceDelegate;
-
-@optional
 #pragma mark- BLE
 /**! Read device Info. Got the response in method readResponseFromDevice:*/
 - (void)readDeviceInfo;
@@ -348,7 +337,7 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 - (void)endExercise;
 - (void)pauseExercise;
 
-
+//标准心率开关
 - (void)switchStandardHeartRate:(BOOL)open;
 
 //同步血压数据
@@ -358,11 +347,10 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 #pragma mark - 彩屏GPS
 //GPS 数据纪录范围
 - (void)syscGPSDataInfo;
+
 - (void)syscGPSDetailDataWithday:(NSInteger)day;
 
-
 #pragma mark - 辅助定位
-
 #pragma mark  辅助定位流程
 /*
  * 写cep文件 流程如下：
@@ -398,28 +386,7 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
  */
 - (void)writeCepData:(NSString *)dataStr Index:(int)index;
 
-
-#pragma mark- PB_FileUpdate
-/****
- fuF.fd = (FUType)[dict[@"fd"] integerValue];
- fuF.fileName = dict[@"fileName"];
- fuF.fileSize = (uint32_t)[dict[@"fileSize"] integerValue];
- fuF.fileCrc32 = (uint32_t)[dict[@"fileCrc32"] integerValue];
- fuF.fileOffset = (uint32_t)[dict[@"fileOffset"] integerValue];
- fuF.crc32AtOffset = (uint32_t)[dict[@"crc32AtOffset"] integerValue];
- */
-- (void)pbFileUpdateInit:(NSDictionary *)dict;
-
-/****
- dataR.fd = (FUType)[dataDict[@"fd"] integerValue];
- dataR.fileOffset = (uint32_t)[dataDict[@"fileOffset"] integerValue];
- dataR.crc32AtOffset = (uint32_t)[dataDict[@"crc32AtOffset"] integerValue];
- dataR.buf = dataDict[@"buf"];
- */
-- (void)pbFileUpdateData:(NSDictionary *)dict;
-/**! 0-GPS, 1-FONT*/
-- (void)pbFileUpdateExit:(NSInteger)fd;
-
+- (void)sendAGPSFileLenth:(NSInteger)len;
 
 @end
 
