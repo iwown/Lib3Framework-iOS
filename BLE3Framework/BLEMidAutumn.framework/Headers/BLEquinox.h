@@ -210,6 +210,26 @@
  */
 - (void)responseOfExerciseSport:(sd_sportType)sportType;
 
+#pragma mark- PB_FileUpdate
+- (void)pbFileUpdateDesc:(NSDictionary *)fileDesc;
+/**!
+ type : 0-GPS, 1-FONT
+ status : 0-isOK, 1-Error ,2-Error
+ error : nil mean successful
+ */
+- (void)pbFileUpdateInit:(NSInteger)type andStatus:(NSInteger)status andError:(NSError *)error;
+
+/**!
+ FUDataResponse_Status_Ok = 0,
+ FUDataResponse_Status_ErrorParams = 1,
+ FUDataResponse_Status_ErrorOffsetMismatch = 2,
+ FUDataResponse_Status_ErrorCrc32Mismatch = 3,
+ FUDataResponse_Status_ErrorInner = 4,
+ */
+- (void)pbFileUpdateData:(NSInteger)type andStatus:(NSInteger)status andFileOfSet:(NSInteger)fileOfSet andCrc32AtFileOfSet:(NSInteger)crc32 andError:(NSError *)error;
+
+- (void)pbFileUpdateExitStatus:(NSInteger)status;
+
 
 #pragma mark -
 /**!

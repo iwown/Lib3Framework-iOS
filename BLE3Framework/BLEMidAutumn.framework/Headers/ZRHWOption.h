@@ -142,6 +142,11 @@ typedef enum{
  */
 @property (nonatomic ,assign) BOOL wearRecognize;
 
+/** 0[default]: Celsius, 1: Fahrenheit */
+@property (nonatomic ,assign) BOOL temperatureUnit;
+
+@property (nonatomic ,copy) NSString *nickName;
+
 - (void)copyOptionForWatch:(ZRHWOption *)hwOption;
 
 - (void)copyOptionForHeadSet:(ZRHWOption *)hwOption;

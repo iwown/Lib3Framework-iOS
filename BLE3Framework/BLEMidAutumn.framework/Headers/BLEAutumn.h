@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, BLEProtocol) {
     /** 2018 designed for R series ear phone, inhert from BLEProtocol_Watch*/
     BLEProtocol_HeadSet = 4,
     /** If you are not sure what your equipment agreement, choose this*/
+    BLEProtocol_PB = 5,
     BLEProtocol_Any = 8,
 } ;
 

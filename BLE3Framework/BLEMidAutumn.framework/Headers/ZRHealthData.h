@@ -68,6 +68,8 @@ typedef enum {
     HDTypeGNSSMinute = 0x62, //GNSS per minuter data
     HDTypeGNSSNow = 0x63,  //GNSS即时数据
     HDTypeECG = 0x64,  //ECG数据
+    HDTypePPG = 0x65,  //PPG数据
+    HDTypeRRI = 0x66,  //房颤数据
     HDTypeEarPhoneHealth = 0x68, //耳机运动数据
     
     HDTypeZGStep = 0x8901,
@@ -213,7 +215,7 @@ typedef struct {
 @property (nonatomic, assign)NSInteger dbp;
 @property (nonatomic, assign)NSInteger bpm;
 
-@property (nonatomic, strong)NSString  *cmd;
+@property (nonatomic, strong) id sleepCmd;
 
 @end
 
@@ -244,6 +246,26 @@ typedef struct {
 @property (nonatomic, strong)NSString  *date;
 @property (nonatomic, copy)NSString  *jsonData;// Json字符串
 @property (nonatomic, strong)NSString  *cmd;
+@end
+
+
+/**! PPG*/
+@interface ZRPPGModel : ZRHealthData
+
+@property (nonatomic, strong) NSString  *uid;
+@property (nonatomic, strong) NSString  *data_from;
+@property (nonatomic ,strong) NSArray *dataArray;
+
+@end
+
+
+/**! 房颤*/
+@interface ZRRRIModel : ZRHealthData
+
+@property (nonatomic, strong) NSString  *uid;
+@property (nonatomic, strong) NSString  *data_from;
+@property (nonatomic ,strong) NSArray *dataArray;
+
 @end
 
 
