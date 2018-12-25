@@ -506,6 +506,10 @@ typedef NS_ENUM (NSInteger,ZRRollMsgType){
 
 @property (nonatomic, assign) NSInteger dstDbp_HB;
 
+@property (nonatomic, assign) NSInteger difSbp;
+
+@property (nonatomic, assign) NSInteger difDbp;
+
 @property (nonatomic, assign) BOOL bp_enable;
 
 /**
