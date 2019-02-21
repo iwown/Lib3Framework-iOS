@@ -189,9 +189,12 @@ typedef enum {
 
 @property(nonatomic,assign)BLEScheduleState state;
 
-@property(nonatomic,strong)NSDate   *invalidDate;
+@property(nonatomic,strong)NSDate *invalidDate;
 
+/** use initWithTitile:subTitle:andDate: instead*/
 - (instancetype)initWithTitile:(NSString *)title subTitle:(NSString *)subTitle year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
+
+- (instancetype)initWithTitile:(NSString *)title subTitle:(NSString *)subTitle andDate:(NSDate *)date;
 @end
 
 typedef NS_ENUM (NSInteger,ShakeType){
