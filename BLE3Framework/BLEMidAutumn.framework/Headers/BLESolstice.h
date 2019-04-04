@@ -388,6 +388,27 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 
 - (void)sendAGPSFileLenth:(NSInteger)len;
 
+#pragma mark- PB_FileUpdate
+/****
+ fuF.fd = (FUType)[dict[@"fd"] integerValue];
+ fuF.fileName = dict[@"fileName"];
+ fuF.fileSize = (uint32_t)[dict[@"fileSize"] integerValue];
+ fuF.fileCrc32 = (uint32_t)[dict[@"fileCrc32"] integerValue];
+ fuF.fileOffset = (uint32_t)[dict[@"fileOffset"] integerValue];
+ fuF.crc32AtOffset = (uint32_t)[dict[@"crc32AtOffset"] integerValue];
+ */
+- (void)pbFileUpdateInit:(NSDictionary *)dict;
+
+/****
+ dataR.fd = (FUType)[dataDict[@"fd"] integerValue];
+ dataR.fileOffset = (uint32_t)[dataDict[@"fileOffset"] integerValue];
+ dataR.crc32AtOffset = (uint32_t)[dataDict[@"crc32AtOffset"] integerValue];
+ dataR.buf = dataDict[@"buf"];
+ */
+- (void)pbFileUpdateData:(NSDictionary *)dict;
+/**! 0-GPS, 1-FONT*/
+- (void)pbFileUpdateExit:(NSInteger)fd;
+
 @end
 
 

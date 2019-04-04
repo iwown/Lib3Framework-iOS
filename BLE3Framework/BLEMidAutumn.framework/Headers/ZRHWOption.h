@@ -50,9 +50,11 @@ typedef enum{
  */
 @property (nonatomic ,assign) BOOL ledSwitch;
 
-
-//惯用手 默认左手
-@property (nonatomic,assign)BOOL  leftHand;
+/**
+ * switch of strong hand, default is YES, left.
+ * 惯用手 默认YSE, 左手。
+ */
+@property (nonatomic,assign)BOOL leftHand;
 /**
  * switch of wrist ,default is YES.
  * 翻腕开关,默认为YES。
