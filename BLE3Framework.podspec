@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 s.name         = 'BLE3Framework'
 
-s.version      = "5.3.7"
+s.version      = "5.3.8"
 
 s.summary      = 'Used for iwown BLE smart band'
 
@@ -23,5 +23,7 @@ s.frameworks = 'Foundation'
 s.vendored_frameworks = 'BLE3Framework/BLEMidAutumn.framework'
 
 s.requires_arc = true
+
+s.dependency 'protobuf'
 
 end
