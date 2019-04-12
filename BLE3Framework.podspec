@@ -24,6 +24,6 @@ s.vendored_frameworks = 'BLE3Framework/BLEMidAutumn.framework'
 
 s.requires_arc = true
 
-s.dependency 'protobuf'
+s.dependency 'Protobuf'
 
 end
