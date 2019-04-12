@@ -525,3 +525,10 @@ typedef NS_ENUM (NSInteger,ZRRollMsgType){
 @end
 
 
+@interface ZRAfConfModel : ZRModel
+
+@property (nonatomic, assign) BOOL isAutoRun;
+
+@property (nonatomic, assign) NSUInteger interval;
+
+@end

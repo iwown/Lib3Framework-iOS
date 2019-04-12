@@ -28,6 +28,8 @@ typedef enum {
     ZRDITypeNormalHealth = 0x61, //Normal health data for Watch
     ZRDITypeGNSSData = 0x62, // GNSS data in Watch
     ZRDITypeECGHealth = 0x64,// ECG data in Watch
+    ZRDITypePPGHealth = 0x65,// PPG data in Watch
+    ZRDITypeRRIHealth = 0x66,// RRI data in Watch
     ZRDITypeEarPhoneData = 0x68
 } ZRDIType;
 
@@ -188,6 +190,21 @@ typedef struct {
 @end
 
 
+typedef struct ZRHealthMdt {
+    float sdnn;
+    float rmssd;
+    float pnn50;
+    float mean;
+    /*
+     HisMdtState_Prepare = 0,
+     HisMdtState_Ongoing = 1,
+     HisMdtState_Relax = 2,
+     */
+    int status;
+    float result;
+    float relax;
+}ZRHealthMdt;
+
 @interface ZRData61Model : ZRHealthData
 //用户id，SDK内不赋值，可忽略
 @property (nonatomic, strong)NSString  *uid;
@@ -223,6 +240,10 @@ typedef struct {
 @property (nonatomic, assign)NSInteger sbp;
 @property (nonatomic, assign)NSInteger dbp;
 @property (nonatomic, assign)NSInteger bpm;
+
+//mdt
+@property (nonatomic, assign) ZRHealthMdt healthMdt;
+
 //睡眠数据，用于计算睡眠用的，需写入.json文件中
 @property (nonatomic, strong) id sleepCmd;
 

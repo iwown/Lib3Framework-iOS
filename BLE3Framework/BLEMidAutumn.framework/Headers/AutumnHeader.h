@@ -50,15 +50,19 @@ typedef NS_ENUM(NSInteger ,SD_TYPE) {
     SD_TYPE_ECG = 0x04,
     SD_TYPE_BLOOD_PRESSURE = 0x05,
     SD_TYPE_STEP = 0x06,//知格，当日1440分钟步数
+    SD_TYPE_PPG = 0x07,
     
     SD_TYPE_DATA_INFO = 0x08,
+    SD_TYPE_DATA_IT_6X = 0x09, //读取手表61|62|64的indextable
+    
+    SD_TYPE_RRI = 0x0A,
     
     SD_TYPE_GNSS_SEGMENT = 0x10,
     SD_TYPE_GNSS_REAL_TIME = 0x11,
     
     SD_TYPE_DATA_NORMAL = 0x80, /**SD_TYPE_SPORT&&
-                              SD_TYPE_SLEEP(IF Support)&&
-                              SD_TYPE_HEART_RATE(IF Support)*/
+                                 SD_TYPE_SLEEP(IF Support)&&
+                                 SD_TYPE_HEART_RATE(IF Support)*/
     SD_TYPE_DATA_SUMMARY = 0xF1, //SUMMARY DATA FOR REVIEW
     SD_TYPE_LAST = 0xFF,
 } ;
