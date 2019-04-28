@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-s.name         = 'BLE3Framework'
+s.name         = 'BLEMidAutumn'
 
 s.version      = "5.3.9"
 
