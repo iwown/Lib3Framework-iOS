@@ -9,10 +9,10 @@ fi
 VERSION=$1
 
 cd /Users/scow/GitHub/Lib3Framework-iOS/ 
-sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" BLE3Framework.podspec
+sed -i "" "s/\([0-9]\)\.\([0-9]\)\.\([0-9]\)/${VERSION}/g" BLEMidAutumn.podspec
 git commit -am "${VERSION}" 
 git push
 git tag ${VERSION}
 git push --tags
 pod lib lint
-pod trunk push BLE3Framework.podspec
+pod trunk push BLEMidAutumn.podspec
