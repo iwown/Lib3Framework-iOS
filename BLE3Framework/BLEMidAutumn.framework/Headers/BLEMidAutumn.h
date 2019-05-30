@@ -25,3 +25,16 @@ FOUNDATION_EXPORT const unsigned char BLEMidAutumnVersionString[];
 #import <BLEMidAutumn/ZRHWOption.h>
 #import <BLEMidAutumn/ZRHealthData.h>
 
+
+
+
+
+/*****************************************************************************
+ ****
+ ** BLEMidAutumn.h                           *   * * *
+ ** Version : 5.4.6                          *   *
+ ** Date : 2019-05-30                        * * * * *
+ **                                              *   *
+ **                                          * * *   *
+ ****
+ ***************************************************************************/
