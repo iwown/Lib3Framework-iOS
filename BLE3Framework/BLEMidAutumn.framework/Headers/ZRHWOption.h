@@ -63,6 +63,12 @@ typedef enum{
 
 
 /**
+ * isStaticState, default is 0.
+ * 是否开启静态卡路里计算 ，默认是0。
+ */
+@property (nonatomic ,assign) BOOL isStaticState;
+
+/**
  * switch of unitType changed ,default is UnitTypeInternational.
  * 公英制单位切换开关 ，默认是国际单位制。
  */
