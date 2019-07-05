@@ -331,15 +331,23 @@ typedef NS_ENUM(NSInteger,TempUnit) {
 
 @interface ZR24Weather : ZRModel
 
-@property (nonatomic,assign)NSInteger year;
-@property (nonatomic,assign)NSInteger month;
-@property (nonatomic,assign)NSInteger day;
-@property (nonatomic,assign)NSInteger hour;
+@property (nonatomic,assign)NSInteger year;  //起始时间的年
+@property (nonatomic,assign)NSInteger month; //起始时间的月
+@property (nonatomic,assign)NSInteger day;   //起始时间的日
+@property (nonatomic,assign)NSInteger hour;  //起始时间的小时
 
-@property (nonatomic,assign)TempUnit unit;
-/**! Groups numbers 24, means 24 hours weather data ,You must sort the data by date*/
+@property (nonatomic,assign)TempUnit unit;   //温度单位
+
+/**!
+ *  Groups numbers 24, means 24 hours weather data ,You must sort the data by date
+ *  从起始时间开始算，每小时的天气情况，最多支持24小时
+ */
 @property (nonatomic,strong)NSArray <ZRWeather *>*weather24Arrs;
 
+
+/**!
+ *  后续几天的天气 最多可以设置7天的天气，Probuff最多设置5天
+ */
 @property (nonatomic,strong)NSArray <ZRDayWeather *>*weather7Arrs;
 
 @end
