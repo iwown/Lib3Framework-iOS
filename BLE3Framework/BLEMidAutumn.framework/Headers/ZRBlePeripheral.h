@@ -71,7 +71,7 @@ typedef enum {
 @property (nonatomic ,strong) NSString *manuDate; //出厂日期
 @property (nonatomic ,strong) NSString *factoryConf; //出厂配置
 
-@property (nonatomic ,strong) NSString *snCode;      // probuff支持的SN码
+@property (nonatomic ,strong) NSData *snCode;      // probuff支持的SN码
 
 + (instancetype)defaultDeviceInfo;
 - (void)updateDeviceInfo:(NSString *)deviceInfo;
