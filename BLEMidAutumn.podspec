@@ -16,7 +16,7 @@ s.source       = { :git => "https://github.com/xuezou/Lib3Framework-iOS.git", :t
 
 s.platform     = :ios
 
-s.ios.deployment_target = "8.0"
+s.ios.deployment_target = "9.0"
 
 s.frameworks = 'Foundation'
 
