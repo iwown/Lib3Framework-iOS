@@ -24,6 +24,10 @@
 #define HEARTRATE_CHARACT_ID                @"2A37"
 #define NEW_HEARTRATE_CHARACT_ID            @"2AFF"
 
+#define HEARTRATE_SERVICE_UUID          @"180D"
+#define HEARTRATE_CHARACT_UUID          @"2A37"
+#define NEW_HEARTRATE_CHARACT_UUID      @"2AFF"
+
 #define PEDOMETER_NEW_CHARACT_SET_UUID      @"FF21"
 #define PEDOMETER_OLD_CHARACT_TEST          @"FF22"
 #define PEDOMETER_NEW_CHARACT_TEST          @"FF23"

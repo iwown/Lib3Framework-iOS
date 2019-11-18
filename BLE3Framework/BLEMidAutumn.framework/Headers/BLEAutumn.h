@@ -142,4 +142,11 @@ typedef enum {
  @return Returning NO means there is something wrong with BLESolstice's object
  */
 - (BOOL)registerSolsticeEquinox:(id<BLEquinox>)equinox;
+
+/**
+ ecg滤波
+ @param ecgArray ecg raw data array
+ */
++ (NSArray *)filterEcgData:(NSArray *)ecgArray;
+
 @end
