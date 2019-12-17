@@ -146,6 +146,7 @@ typedef enum {
 /**
  ecg滤波
  @param ecgArray ecg raw data array
+ @return result for filter ECG raw data
  */
 + (NSArray *)filterEcgData:(NSArray *)ecgArray;
 

@@ -59,6 +59,14 @@ typedef enum {
 
 @end
 
+typedef enum {
+    RealTime_NONE = 0,
+    RealTime_ECG =  0x00000001,
+    RealTime_PPG =  0x00000002,
+    RealTime_MAG =  0x00000004,
+    RealTime_GYRO = 0x00000008,
+    RealTime_ACC =  0x00000010
+} RealTimeSensorType;
 
 typedef enum {
     HDTypeNull = 0x00,
@@ -351,10 +359,23 @@ typedef struct ZRHealthMdt {
 
 @interface ZRBloodPressureModel : ZRHealthData
 
-@property (nonatomic, assign)NSInteger sbp;      //训练的步数，实时更新
-@property (nonatomic, assign)NSInteger dbp;   //训练的卡路里；一分钟更新一次；
+@property (nonatomic, assign)NSInteger sbp;
+@property (nonatomic, assign)NSInteger dbp;
 
 @end
 
+@interface ZRSensorDataModel : ZRHealthData
 
+/**
+ *  数据类型
+ */
+@property (nonatomic, assign)RealTimeSensorType sType;
+
+/**
+ *  详细数据
+ */
+@property (nonatomic, strong)NSArray *detailData;
+
+
+@end
 

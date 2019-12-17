@@ -11,6 +11,7 @@
 
 @class ZRHealthData;
 @class ZRDataInfo;
+@class ZRSensorDataModel;
 
 /**
  DicoverDeleagte，Response delegate methods in discover device.
@@ -261,8 +262,17 @@
 
 
 #pragma mark -
-
+/*
+ * 血压数据
+*/
 - (void)responseOfBloodPressureData:(NSArray *)data;
+
+#pragma mark - RealTime Sensor Data
+/**
+ * realtime sensor data
+ * @param sData Real-time sensor data   sensor实时数据
+ */
+- (void)responseOfRealTimeSensorData:(ZRSensorDataModel *)sData;
 
 
 @end

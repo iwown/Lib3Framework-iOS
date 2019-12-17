@@ -155,8 +155,15 @@ typedef enum{
 
 @property (nonatomic ,copy) NSString *nickName;
 
+/**
+ * Bright screen duration unit:s ; 亮屏持续时长 单位：s
+ * Only valid in protobuf protocol 2.0 and above
+ */
+@property (nonatomic, assign) NSUInteger bsDuration;
+
 - (void)copyOptionForWatch:(ZRHWOption *)hwOption;
 
 - (void)copyOptionForHeadSet:(ZRHWOption *)hwOption;
 
 @end
+

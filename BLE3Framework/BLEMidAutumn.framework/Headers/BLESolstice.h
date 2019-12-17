@@ -409,6 +409,20 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 /**! 0-GPS, 1-FONT*/
 - (void)pbFileUpdateExit:(NSInteger)fd;
 
+#pragma mark- PB_RealTime_Sensor_Data
+/**
+ * 开始同步实时数据 PS：需要什么数据，数组就加什么type
+ */
+- (void)startReadRealTimeDataWithTypes:(NSArray *)types;
+/**
+* 暂停同步实时数据 PS：同步数据时传什么types，暂停的时候也要传什么types
+*/
+- (void)pauseReadRealTimeDataWithTypes:(NSArray *)types;
+/**
+* 停止同步实时数据 PS：同步数据时传什么types，停止的时候也要传什么types
+*/
+- (void)stopReadRealTimeDataWithTypes:(NSArray *)types;
+
 @end
 
 
