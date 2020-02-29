@@ -10,9 +10,9 @@ s.license      = 'MIT'
 
 s.author       = { "xuezou" => "377949550@qq.com" }
 
-s.homepage     = 'https://github.com/xuezou/Lib3Framework-iOS'
+s.homepage     = 'https://github.com/iwown/Lib3Framework-iOS'
 
-s.source       = { :git => "https://github.com/xuezou/Lib3Framework-iOS.git", :tag => s.version}
+s.source       = { :git => "https://github.com/iwown/Lib3Framework-iOS.git", :tag => s.version}
 
 s.platform     = :ios
 
