@@ -329,6 +329,10 @@ typedef void(^ReadDeviceSettingComplementation)(id obj);
 /**! SDK internal use, do not need to use it*/
 - (void)stopSpecialData:(SD_TYPE)sdType;
 
+- (void)getSpecialDataIndexTable:(SD_TYPE)sdType;
+
+
+
 -(void)testECGModel;
 
 //微教练
