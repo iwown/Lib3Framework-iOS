@@ -32,8 +32,8 @@ FOUNDATION_EXPORT const unsigned char BLEMidAutumnVersionString[];
 /*****************************************************************************
  ****
  ** BLEMidAutumn.h                           *   * * *
- ** Version : 5.5.9                          *   *
- ** Date : 2020-02-29                        * * * * *
+ ** Version : 5.5.8                          *   *
+ ** Date : 2019-11-18                        * * * * *
  **                                              *   *
  **                                          * * *   *
  ****
