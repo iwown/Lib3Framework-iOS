@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 s.name         = 'BLEMidAutumn'
 
-s.version      = "6.6.2"
+s.version      = "6.6.3"
 
 s.summary      = 'Used for iwown BLE smart band'
 
