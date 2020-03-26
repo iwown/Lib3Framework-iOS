@@ -8,7 +8,7 @@ s.summary      = 'Used for iwown BLE smart band'
 
 s.license      = 'MIT'
 
-s.authors       = { "xuezou" => "377949550@qq.com", "westfish123" ==> "741415771@qq.com" }
+s.authors       = { "xuezou" => "377949550@qq.com" }
 
 s.homepage     = 'https://github.com/iwown/Lib3Framework-iOS'
 
