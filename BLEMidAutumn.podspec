@@ -2,13 +2,13 @@ Pod::Spec.new do |s|
 
 s.name         = 'BLEMidAutumn'
 
-s.version      = "6.6.4"
+s.version      = "6.6.5"
 
 s.summary      = 'Used for iwown BLE smart band'
 
 s.license      = 'MIT'
 
-s.author       = { "xuezou" => "377949550@qq.com" }
+s.authors       = { "xuezou" => "377949550@qq.com", "westfish123" ==> "741415771@qq.com" }
 
 s.homepage     = 'https://github.com/iwown/Lib3Framework-iOS'
 
