@@ -63,6 +63,8 @@ typedef NS_ENUM(NSInteger ,SD_TYPE) {
     
     SD_TYPE_Spo2 = 0x0B,  //血氧数据
     
+    SD_TYPE_Temperature = 0x0C,  //温度历史数据
+    
     SD_TYPE_GNSS_SEGMENT = 0x10,
     SD_TYPE_GNSS_REAL_TIME = 0x11,
     

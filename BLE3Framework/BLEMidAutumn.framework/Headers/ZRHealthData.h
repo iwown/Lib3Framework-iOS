@@ -32,6 +32,7 @@ typedef enum {
     ZRDITypeRRIHealth = 0x66,// RRI data in Watch
     ZRDITypeEarPhoneData = 0x68,
     ZRDITypeSpo2 = 0x69,  //血氧数据
+    ZRDITypeTemperature = 0x70,  //温度数据
 } ZRDIType;
 
 @interface DDInfo : NSObject
@@ -84,6 +85,8 @@ typedef enum {
     HDTypeEarPhoneHealth = 0x68, //耳机运动数据
     
     HDTypeSpo2 = 0x69,  //血氧数据
+    
+    HDTypeTemperature = 0x70,  //血氧数据
     
     HDTypeZGStep = 0x8901,
     HDTypeZGExercise = 0x8B,
@@ -305,7 +308,21 @@ typedef struct ZRHealthMdt {
 
 @property (nonatomic, strong) NSString  *uid;
 @property (nonatomic, strong) NSString  *data_from;
-@property (nonatomic ,strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *dataArray;
+
+@end
+
+/**! 温度数据*/
+@interface ZRTemperatureModel : ZRHealthData
+
+@property (nonatomic, strong) NSString  *uid;
+@property (nonatomic, strong) NSString  *data_from;
+
+@property (nonatomic, assign) int eviBody1;
+@property (nonatomic, assign) int eviBody2;
+
+@property (nonatomic, assign) int estiArm1;
+@property (nonatomic, assign) int estiArm2;
 
 @end
 
@@ -382,3 +399,13 @@ typedef struct ZRHealthMdt {
 
 @end
 
+
+@interface ZRTemperatureDataModel : ZRHealthData
+
+/**
+ *  详细数据
+ */
+@property (nonatomic, strong)NSArray *detailData;
+
+
+@end
